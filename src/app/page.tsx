@@ -10,7 +10,7 @@ export default function Home() {
       <CustomCursor />    
       <Navbar />
       <div className="flex w-full max-w-screen min-h-screen flex-col relative bg-black m-0 p-0 overflow-x-hidden">
-        <Image src={bg} alt="Background" fill className="object-cover w-full h-full absolute inset-0 z-0" />
+        <Image src={bg} priority={false} alt="Background" fill className="object-cover w-full h-full absolute inset-0 z-0" />
         <div className="w-full h-full flex flex-col items-center bg-black/60 backdrop-blur-xl z-10">
           <LandingPage />
         </div>       

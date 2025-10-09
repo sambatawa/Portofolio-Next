@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Poppins } from "next/font/google";
 import { FaGlobe, FaRobot, FaServer, FaChartBar } from "react-icons/fa";
 import Project from "@/components/Project";
+import Contact from "@/components/Contact";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -66,13 +67,13 @@ const LandingPage = () => {
               <a href="#Contact" className="whitespace-nowrap text-2xl font-medium mt-6 px-6 md:px-30 py-3 bg-gradient-to-r from-[#D9D9D9] to-[#F2F2F2] text-black rounded-full hover:scale-105 hover:shadow-[inset_0_4px_6px_rgba(0,0,0,0.1)] transition-all duration-300">
                 Collab yuk
               </a>
-              <a href="#" className="whitespace-nowrap text-2xl mt-6 px-4 py-2 bg-transparent border-white border text-color rounded-full hover:scale-105 hover:border-3 transition-all duration-300">
+              <a href="#About" className="whitespace-nowrap text-2xl mt-6 px-4 py-2 bg-transparent border-white border text-color rounded-full hover:scale-105 hover:border-3 transition-all duration-300">
                 CV
               </a>
             </div>
           </div>
           <div className="order-first 2xl:order-none rounded-b-3xl 2xl:rounded-l-none 2xl:rounded-r-3xl w-full 2xl:w-[40vw] h-[500px] 2xl:h-full relative overflow-hidden z-49 animate-slide-down transition-all duration-300">
-            <Image src="/foto.jpg" alt="Foto" fill sizes="(min-width: 1536px) 40vw, 90vw" style={{ objectFit: "cover", objectPosition: "center"}}/>
+            <Image src="/foto.jpg" priority={false} alt="Foto" fill sizes="(min-width: 1536px) 40vw, 90vw" style={{ objectFit: "cover", objectPosition: "center"}}/>
             <span className={`${poppins.className} italic relative inset-0 flex items-center justify-center z-50 text-white text-[50px] lg:text-[80px] px-10 font-bold`}>Sambatawa</span> 
             <span className="absolute left-0 right-0 bottom-0 h-[100px] flex items-center justify-center z-50 text-white text-3xl lg:text-4xl border border-t-3 bg-gradient-2 font-medium">
               Bogor, Indonesia
@@ -80,8 +81,10 @@ const LandingPage = () => {
           </div>
         </div>
       </section>   
-      <div id="Page2" className="scroll-container flex flex-col h-[80vh] 2xl:h-[80vh] w-[80vw] my-auto mt-40 mb-auto overflow-y-auto scroll-smooth snap-y snap-mandatory bg-gradient-to-br from-[#000000]/30 to-[#3a3a3a]/30 rounded-3xl animate-slide-up duration-300">
-        <section id="About" className="scroll-mt-28 p-10 h-full snap-start flex flex-col gap-8 text-white">
+      <div
+        id="Page2"
+        className="scroll-container flex flex-col h-[80vh] 2xl:h-[80vh] w-full max-w-[80vw] mx-auto my-auto mt-40 mb-auto overflow-y-auto overflow-x-hidden scroll-smooth snap-y snap-mandatory bg-gradient-to-br from-[#000000]/30 to-[#3a3a3a]/30 rounded-3xl animate-slide-up duration-300">
+        <section id="About" className="scroll-mt-28 p-10 px-30 w-full max-w-[80vw] mx-auto h-full snap-start flex flex-col gap-8 text-white">
           <h2 className="text-4xl md:text-6xl text-center font-bold">Who is Sambatawa?</h2>
           <div className="w-full gap-8 items-center">
             <div className="space-y-5">
@@ -93,9 +96,9 @@ const LandingPage = () => {
                 I&apos;m also picking up backend fundamentals along the way, and right now my passion is combining backend and AI/ML to create smart, intuitive web experiences.
               </p>
               <div className="flex items-center gap-3 justify-center text-gray-300">
-                <span className="h-px w-10 bg-gray-500" />
-                <span>Bogor, Indonesia</span>
-                <span className="h-px w-10 bg-gray-500" />
+                <span className="h-px w-30 bg-gray-500" />
+                <span className="h-px w-60 bg-gray-500" />
+                <span className="h-px w-90 bg-gray-500" />               
               </div>
             </div>
           </div>
@@ -144,7 +147,7 @@ const LandingPage = () => {
                 </div>
               </div>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-3">
               <div className="space-y-2">
                 <h3 className="text-3xl font-semibold tracking-wide text-gray-100">What Can I Do?</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
@@ -189,12 +192,11 @@ const LandingPage = () => {
             </div>
           </div>
         </section>
-        <section id="Projects" className="scroll-mt-28 p-10 snap-start flex flex-col items-center justify-center text-white">    
+        <section id="Projects" className="scroll-mt-28 p-10 h-screen w-screen max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">    
           <Project />
         </section>
-        <section id="Contact" className="scroll-mt-28 h-[100vh] min-h-screen snap-start flex flex-col items-center justify-center border-t border-white text-white">
-          <h2 className="text-5xl font-bold">Contact Me</h2>
-          <p className="mt-4 text-xl max-w-xl text-center">Hubungi saya di sini.</p>
+        <section id="Contact" className="scroll-mt-28 w-full max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">
+          <Contact />
         </section>
       </div>
     </>

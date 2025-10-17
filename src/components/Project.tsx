@@ -41,7 +41,7 @@ const projects = [
 const Project = () => {
   return (
     <div className="flex flex-col items-center justify-center h-[100vh] min-h-screen gap-10">
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-100 tracking-wide">My Project</h2>
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-100 bg-[#8ed5dd]/20 px-10 py-5 rounded-full tracking-wide">The Projects</h2>
       <Swiper effect={"cards"} className="mySwiper w-[323px] h-[185px] 2xl:w-[843px] 2xl:h-[497px]" grabCursor={true} modules={[EffectCards, Pagination]}
         pagination={{
           el: ".custom-pagination",

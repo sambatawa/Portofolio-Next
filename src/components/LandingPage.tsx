@@ -85,7 +85,7 @@ const LandingPage = () => {
         id="Page2"
         className="scroll-container flex flex-col h-[80vh] 2xl:h-[80vh] w-full max-w-[80vw] mx-auto my-auto mt-40 mb-auto overflow-y-auto overflow-x-hidden scroll-smooth snap-y snap-mandatory bg-gradient-to-br from-[#000000]/30 to-[#3a3a3a]/30 rounded-3xl animate-slide-up duration-300">
         <section id="About" className="scroll-mt-28 p-10 px-30 w-full max-w-[80vw] mx-auto h-full snap-start flex flex-col gap-8 text-white">
-          <h2 className="text-4xl md:text-6xl text-center font-bold">Who is Sambatawa?</h2>
+          <h2 className="text-4xl md:text-5xl text-center font-bold ">Who is Sambatawa?</h2>
           <div className="w-full gap-8 items-center">
             <div className="space-y-5">
               <div>
@@ -141,7 +141,7 @@ const LandingPage = () => {
               <div className="space-y-2">
                 <h3 className="text-3xl font-semibold tracking-wide text-gray-100">Hobbies and Interests</h3>
                 <div className="flex flex-wrap gap-4">
-                  {["Music", "Reading", "Travel", "Learn code", "3D Design CAD"].map((h) => (
+                  {["Music", "Writing", "Reading", "Travel", "Learn code", "3D Design CAD"].map((h) => (
                     <span key={h} className="px-3 py-1 rounded-full border border-white/20 text-lg text-gray-200">{h}</span>
                   ))}
                 </div>

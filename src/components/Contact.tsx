@@ -24,7 +24,12 @@ const Contact = () => {
   const Submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api", {
+      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailValid.test(form.email)) {
+        alert("Format email tidak valid!");
+        return;
+      }
+      const response = await fetch("/api/contact/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,7 +51,7 @@ const Contact = () => {
 
   return (
     <div className={`flex flex-col items-center justify-center gap-10 ${poppins.className}`}>
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-100 tracking-wide mt-28 "> Contact Me</h2>
+        <h2 className="text-4xl md:text-5xl font-semibold text-gray-100 tracking-wide mt-28 bg-[#8ed5dd]/20 px-10 py-5 rounded-full"> Contact Me</h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-[80vw] mx-auto px-10">
           <div className="space-y-3 p-2 flex flex-col gap-3 items-center">
             <h3 className="text-3xl font-semibold text-gray-100">Get in Touch</h3>

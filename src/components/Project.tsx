@@ -115,7 +115,7 @@ const Project = () => {
           </div>
 
           <div className="pt-2 flex gap-3 flex-wrap">
-            <a href={active.demo ?? "#"} target="_blank" rel="noreferrer" className="px-5 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 transition-colors font-semibold shadow-lg shadow-cyan-500/20 flex items-center gap-2">
+            <a href={active.demo ?? "#"} target="_blank" rel="noreferrer" className="px-5 py-3 rounded-full bg-gradient-primary transition-colors font-semibold shadow-lg shadow-cyan-500/20 flex items-center gap-2">
               <FaExternalLinkAlt /> Demo
             </a>
             <a href={active.repo ?? "#"} target="_blank" rel="noreferrer" className="px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors font-semibold backdrop-blur flex items-center gap-2">

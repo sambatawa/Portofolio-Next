@@ -56,24 +56,25 @@ const Contact = () => {
           <div className="inline-block">
             <span className="text-sm font-semibold text-gradient-accent uppercase tracking-wider">Get In Touch</span>
           </div>
-          <h2 className="text-5xl grid grid-cols-1 md:text-6xl font-bold text-white mt-4 mb-6 leading-tight pb-2">
+          <h2 className="text-2xl grid grid-cols-1 md:text-6xl font-bold text-white mt-2 mb-4 leading-tight pb-2">
             Let&apos;s Build Something
             <span className="text-gradient-primary">Amazing Together</span>
           </h2>
-          <p className="text-xl text-color max-w-3xl mx-auto leading-relaxed"> Ready to turn your ideas into reality? I&apos;m here to help you create exceptional digital experiences.</p>
+          <p className="text-lg text-color max-w-3xl mx-auto leading-relaxed"> Ready to turn your ideas into reality? I&apos;m here to help you create exceptional digital experiences.</p>
         </div>
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <div className="glass-card rounded-3xl p-8 hover:neon-glow transition-all duration-300">
+          <div className="space-y-5">
+            <div className="glass-card rounded-tr-full p-8 hover:neon-glow transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
-                <h3 className="text-2xl font-bold text-gradient-primary">Contact Information</h3>
+                <h3 className="text-xl font-bold text-gradient-primary">Contact Information</h3>
               </div>
-              <p className="text-color text-lg mb-8 leading-relaxed">I&apos;m always excited to work on new projects. Let&apos;s discuss how we can bring your vision to life.</p>
-              <div className="space-y-6">
+              <p className="text-color text-md leading-relaxed">I&apos;m always excited to work on new projects.</p>
+              <p className="mb-6 text-color text-md leading-relaxed">Let&apos;s discuss how we can bring your vision to life.</p>
+              <div className="space-y-6 ml-4">
                 <div className="flex items-center gap-4 group cursor-pointer">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow">
-                    <FaMapMarkerAlt className="text-white text-lg"/>
+                  <div className="w-10 h-10 bg-gradient-primary rounded-b-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow">
+                    <FaMapMarkerAlt className="text-white text-md"/>
                   </div>
                   <div>
                     <span className="font-semibold text-white text-lg block">Location</span>
@@ -81,7 +82,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group cursor-pointer">
-                  <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow-accent">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow-accent">
                     <FaEnvelope className="text-white text-lg"/>
                   </div>
                   <div>
@@ -90,41 +91,41 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group cursor-pointer">
-                  <div className="w-12 h-12 bg-gradient-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow">
                     <FaPhoneAlt className="text-white text-lg"/>
                   </div>
                   <div>
                     <span className="font-semibold text-white text-lg block">Phone</span>
-                    <span className="text-color">Available on request</span>
+                    <span className="text-color">+62...</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="glass-card rounded-3xl p-8 hover:neon-glow-accent transition-all duration-300">
+            <div className="glass-card rounded-b-xxl p-8 hover:neon-glow-accent transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-2 h-8 bg-gradient-secondary rounded-full"></div>
-                <h3 className="text-2xl font-bold text-gradient-accent">Follow Me</h3>
+                <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
+                <h3 className="text-xl font-bold text-gradient-primary">Follow Me</h3>
               </div>
               <div className="grid grid-cols-3 gap-4">
-                <a href="https://github.com/sambatawa" className="group glass-button rounded-2xl p-6 text-center transition-all duration-300 hover:scale-105 hover:neon-glow" target="_blank" rel="noopener noreferrer">
-                  <FaGithub className="text-3xl text-color group-hover:text-white mx-auto mb-3 transition-colors"/>
+                <a href="https://github.com/sambatawa" className="group glass-button rounded-bl-4xl p-3 text-center transition-all duration-300 hover:scale-105 hover:neon-glow" target="_blank" rel="noopener noreferrer">
+                  <FaGithub className="text-2xl text-color group-hover:text-white mx-auto mb-1 transition-colors"/>
                   <span className="text-sm text-color group-hover:text-white font-medium">GitHub</span>
                 </a>
-                <a href="https://www.linkedin.com/in/inas-samara-taqia" className="group glass-button rounded-2xl p-6 text-center transition-all duration-300 hover:scale-105 hover:neon-glow-accent" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedinIn className="text-3xl text-color group-hover:text-white mx-auto mb-3 transition-colors"/>
+                <a href="https://www.linkedin.com/in/inas-samara-taqia" className="group glass-button p-3 text-center transition-all duration-300 hover:scale-105 hover:neon-glow-accent" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedinIn className="text-2xl text-color group-hover:text-white mx-auto mb-1 transition-colors"/>
                   <span className="text-sm text-color group-hover:text-white font-medium">LinkedIn</span>
                 </a>
-                <a href="https://www.instagram.com/sambatawa_/" className="group glass-button rounded-2xl p-6 text-center transition-all duration-300 hover:scale-105 hover:neon-glow" target="_blank" rel="noopener noreferrer">
-                  <FaInstagram className="text-3xl text-color group-hover:text-white mx-auto mb-3 transition-colors"/>
+                <a href="https://www.instagram.com/sambatawa_/" className="group glass-button rounded-br-4xl p-3 text-center transition-all duration-300 hover:scale-105 hover:neon-glow" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram className="text-2xl text-color group-hover:text-white mx-auto mb-1 transition-colors"/>
                   <span className="text-sm text-color group-hover:text-white font-medium">Instagram</span>
                 </a>
               </div>
             </div>
           </div>
-          <div className="glass-card rounded-3xl p-8 hover:neon-glow transition-all duration-300">
+          <div className="glass-card rounded-b-4xl p-8 hover:neon-glow transition-all duration-300">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-2 h-8 bg-gradient-primary rounded-full"></div>
-              <h3 className="text-2xl font-bold text-gradient-accent">Send Message</h3>
+              <h3 className="text-xl font-bold text-gradient-accent">Or Send Message:</h3>
             </div>
             <form onSubmit={Submit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

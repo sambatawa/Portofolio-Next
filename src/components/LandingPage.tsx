@@ -63,7 +63,7 @@ const LandingPage = () => {
         <div className="w-[90vw] 2xl:w-[80vw] h-[90vh] 2xl:h-[70vh] flex flex-col 2xl:flex-row gap-10 2xl:gap-0 animate-slide-up transition-all duration-300">
           <div className="w-[90vw] 2xl:w-[60vw] flex flex-col items-center text-center 2xl:text-start 2xl:items-start justify-center px-5 xl:px-20">
             <div className="glass-card p-6 mb-8 animate-slide-left rounded-r-full">
-              <h2 className="text-sm xl:text-lg border-r-3 border-l-3 border-white/60 px-3 py-2 rounded-full text-gradient-accent font-semibold tracking-wider uppercase">
+              <h2 className="text-sm xl:text-lg border-r-3 border-l-3 border-white/60 px-3 py-2 rounded-r-full text-gradient-accent font-semibold tracking-wider uppercase">
               Machine Learning and Web Enthusiast
               </h2>
             </div>
@@ -74,9 +74,9 @@ const LandingPage = () => {
               Building the future of web applications with AI/ML integration and Web3 technologies. 
               Passionate about creating intelligent, decentralized solutions that push the boundaries of what&apos;s possible.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 mt-8 2xl:mt-20 animate-slide-left">
+            <div className="flex flex-col sm:flex-row gap-6 mt-8 2xl:mt-20 animate-slide-left border-b-2 border-t-1 rounded-3xl border-/60 py-2 px-2">
               <a href="#Contact" className="group relative px-8 py-4 bg-gradient-primary text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 neon-glow">
-                <span className="relative z-10">Let&apos;s Collaborate</span>
+                <div className="relative px-15 z-10">Let&apos;s Collaborate</div>
                 <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
               <a href="#About" className="glass-button px-8 py-4 text-white font-semibold rounded-full hover:scale-105 transition-all duration-300">
@@ -85,12 +85,12 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="order-first 2xl:order-none w-full 2xl:w-[40vw] h-[500px] 2xl:h-full relative overflow-hidden z-49 animate-slide-right">
-            <div className="glass-card h-full p-8 flex flex-col items-center justify-center relative">
+            <div className="glass-card h-full p-8 flex flex-col items-center justify-center relative rounded-t-full overflow-hidden">
               <div className="absolute inset-0 bg-gradient-dark opacity-50 rounded-2xl"></div>
-              <Image src="/foto.jpg" className="object-cover rounded-2xl" sizes="(min-width: 1536px) 40vw, 90vw" priority={false} alt="Profile" fill />
+              <Image src="/foto.jpg" className="object-cover" sizes="(min-width: 1536px) 40vw, 90vw" priority={false} alt="Profile" fill />
               <div className="relative z-10 text-center">
-                <span className={`${poppins.className} text-white text-[50px] lg:text-[80px] font-bold text-gradient-glow`}>Sambatawa</span> 
-                <div className="mt-4 px-6 py-3 glass-card rounded-full">
+                <span className={`${poppins.className} text-white text-[40px] lg:text-[80px] mx-5 font-bold text-gradient-glow`}>Sambatawa</span> 
+                <div className="mt-20 md:mt-60 lg:mt-80 mx-7 px-6 py-3 glass-card rounded-full">
                   <span className="text-white text-xl lg:text-2xl font-medium">Bogor, Indonesia</span>        
                 </div>
               </div>
@@ -104,12 +104,12 @@ const LandingPage = () => {
             <div className="inline-block">
               <span className="text-sm font-semibold text-gradient-accent uppercase tracking-wider">About Me</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold text-white mt-4 mb-6">
+            <h2 className="text-5xl font-bold text-white mt-3 mb-4">
               Who is 
               <span className="text-gradient-primary"> Sambatawa?</span>
             </h2>
             <div className="glass-card rounded-b-3xl p-4 inline-block">
-              <p className="text-lg text-gradient-accent font-medium">inassamarataqia@gmail.com | 21 years old</p>
+              <p className="text-md text-gradient-accent font-medium">inassamarataqia@gmail.com | 21 years old</p>
             </div>
           </div>
           
@@ -126,7 +126,7 @@ const LandingPage = () => {
                 <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
-                  <h3 className="text-2xl font-bold text-gradient-primary">Technical Skills</h3>
+                  <h3 className="text-xl font-bold text-gradient-primary">Technical Skills</h3>
                 </div>
                   <div className="relative h-full w-full bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-6 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 animate-pulse"></div>  
@@ -287,7 +287,7 @@ const LandingPage = () => {
                   <div className="text-left">
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
-                        <h3 className="text-2xl font-bold text-gradient-primary mb-6">Education</h3>
+                        <h3 className="text-xl font-bold text-gradient-primary mb-6">Education</h3>
                       </div>
                     <div className="flex gap-4 group cursor-pointer">
                       <div className="w-12 h-12 bg-gradient-dark rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow">
@@ -303,9 +303,9 @@ const LandingPage = () => {
                   <div className="text-left">
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
-                      <h3 className="text-2xl font-bold text-gradient-primary mb-6">Hobby and Interests</h3>
+                      <h3 className="text-xl font-bold text-gradient-primary mb-6">Hobby and Interests</h3>
                       </div>
-                    <div className="flex flex-wrap gap-3 justify-between">
+                    <div className="flex flex-wrap gap-3 justify-center">
                       {["Web3", "AI/ML", "Blockchain", "Music", "Design", "Travel", "Writing", "Reading", "Learn code", "3D Design CAD"].map((interest) => (
                         <span key={interest} className="px-4 py-2 rounded-full bg-gradient-dark text-white/80 text-sm font-medium hover:scale-105 transition-all duration-300 cursor-pointer"> {interest} </span>))}
                     </div>
@@ -318,7 +318,7 @@ const LandingPage = () => {
                 <div className="inline-block">
                   <span className="text-sm font-semibold text-gradient-accent uppercase tracking-wider">What I Build</span>
                 </div>
-                <h3 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-4">
+                <h3 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-5">
                   Creating 
                   <span className="text-gradient-primary"> Digital Solutions</span>
                 </h3>
@@ -328,7 +328,7 @@ const LandingPage = () => {
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 p-8 hover:from-blue-500/20 hover:via-purple-500/20 hover:to-pink-500/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25">
+                <div className="group relative overflow-hidden rounded-r-full pl-28 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 p-8 hover:from-blue-500/20 hover:via-purple-500/20 hover:to-pink-500/20 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/10">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 animate-pulse"></div>
                   <div className="absolute inset-0">
                     {[...Array(15)].map((_, i) => {
@@ -354,13 +354,13 @@ const LandingPage = () => {
                   <div className="relative z-10">
                     <div className="flex items-center gap-6 mb-6">
                       <div className="relative">
-                        <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-blue-500/50">
+                        <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-blue-500/50">
                           <FaGlobe className="text-white text-3xl" />
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
                       </div>
                       <div>
-                        <h4 className="text-white text-2xl font-bold mb-2 group-hover:text-gradient-primary transition-colors duration-300">
+                        <h4 className="text-white text-xl font-bold mb-2 group-hover:text-gradient-primary transition-colors duration-300">
                           Web Applications
                         </h4>
                         <div className="flex items-center gap-2">
@@ -383,7 +383,7 @@ const LandingPage = () => {
                   </div>
                 </div>
                 
-                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-red-500/10 p-8 hover:from-purple-500/20 hover:via-pink-500/20 hover:to-red-500/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
+                <div className="group relative overflow-hidden rounded-l-full pl-30 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-red-500/10 p-8 hover:from-purple-500/20 hover:via-pink-500/20 hover:to-red-500/20 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/10">
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-red-500/5 animate-pulse"></div>
                   <div className="absolute inset-0">
                     {[...Array(15)].map((_, i) => {
@@ -416,7 +416,7 @@ const LandingPage = () => {
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
                       </div>
                       <div>
-                        <h4 className="text-white text-2xl font-bold mb-2 group-hover:text-gradient-accent transition-colors duration-300">
+                        <h4 className="text-white text-xl font-bold mb-2 group-hover:text-gradient-accent transition-colors duration-300">
                           AI Integration
                         </h4>
                         <div className="flex items-center gap-2">
@@ -439,7 +439,7 @@ const LandingPage = () => {
                   </div>
                 </div>
                 
-                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 p-8 hover:from-green-500/20 hover:via-emerald-500/20 hover:to-teal-500/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25">
+                <div className="group relative overflow-hidden rounded-r-full pl-28 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 p-8 hover:from-green-500/20 hover:via-emerald-500/20 hover:to-teal-500/20 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-green-500/10">
                   <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 via-emerald-500/5 to-teal-500/5 animate-pulse"></div>
                   <div className="absolute inset-0">
                     {[...Array(15)].map((_, i) => {
@@ -472,7 +472,7 @@ const LandingPage = () => {
                         <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
                       </div>
                       <div>
-                        <h4 className="text-white text-2xl font-bold mb-2 group-hover:text-gradient-secondary transition-colors duration-300">
+                        <h4 className="text-white text-xl font-bold mb-2 group-hover:text-gradient-secondary transition-colors duration-300">
                           Backend Systems
                         </h4>
                         <div className="flex items-center gap-2">
@@ -495,7 +495,7 @@ const LandingPage = () => {
                   </div>
                 </div>
                 
-                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange-500/10 via-red-500/10 to-pink-500/10 p-8 hover:from-orange-500/20 hover:via-red-500/20 hover:to-pink-500/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/25">
+                <div className="group relative overflow-hidden rounded-l-full pl-30 bg-gradient-to-br from-orange-500/10 via-red-500/10 to-pink-500/10 p-8 hover:from-orange-500/20 hover:via-red-500/20 hover:to-pink-500/20 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/10">
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-red-500/5 to-pink-500/5 animate-pulse"></div>
                   <div className="absolute inset-0">
                     {[...Array(15)].map((_, i) => {
@@ -522,13 +522,13 @@ const LandingPage = () => {
                   <div className="relative z-10">
                     <div className="flex items-center gap-6 mb-6">
                       <div className="relative">
-                        <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-orange-500/50">
+                        <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-pink-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-orange-500/50">
                           <FaChartBar className="text-white text-3xl" />
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-pink-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
                       </div>
                       <div>
-                        <h4 className="text-white text-2xl font-bold mb-2 group-hover:text-gradient-to-r group-hover:from-orange-400 group-hover:to-pink-400 transition-colors duration-300">
+                        <h4 className="text-white text-xl font-bold mb-2 group-hover:text-gradient-to-r group-hover:from-orange-400 group-hover:to-pink-400 transition-colors duration-300">
                           Data Solutions
                         </h4>
                         <div className="flex items-center gap-2">
@@ -554,10 +554,10 @@ const LandingPage = () => {
             </div>
           </div>
         </section>
-        <section id="Projects" className="scroll-mt-28 p-10 w-full max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">    
+        <section id="Projects" className="scroll-mt-28 p-10 px-30 w-full max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">    
           <Project />
         </section>
-        <section id="Contact" className="scroll-mt-28 p-10 w-full max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">
+        <section id="Contact" className="scroll-mt-28 p-10 px-30 w-full max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">
           <Contact />
         </section>
       </div>

@@ -50,92 +50,114 @@ const Contact = () => {
   };
 
   return (
-    <div className={`flex flex-col items-center justify-center gap-10 ${poppins.className}`}>
-        <h2 className="text-4xl md:text-5xl font-semibold text-gray-100 tracking-wide mt-28 bg-[#8ed5dd]/20 px-10 py-5 rounded-full"> Contact Me</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-[80vw] mx-auto px-10">
-          <div className="space-y-3 p-2 flex flex-col gap-3 items-center">
-            <h3 className="text-3xl font-semibold text-gray-100">Get in Touch</h3>
-            <p className="text-lg"> Feel free to reach out through social media or send me a direct message using the form.</p>
-            <div className="justify-start items-start w-full px-10 py-5">
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-3">
-                  <span className="bg-[#8ed5dd] rounded-full p-2">
-                    <FaMapMarkerAlt className="text-white" size={20}/>
-                  </span>
+    <div className={`${poppins.className} py-20`}>
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-35">
+          <div className="inline-block">
+            <span className="text-sm font-semibold text-gradient-accent uppercase tracking-wider">Get In Touch</span>
+          </div>
+          <h2 className="text-5xl grid grid-cols-1 md:text-6xl font-bold text-white mt-4 mb-6 leading-tight pb-2">
+            Let&apos;s Build Something
+            <span className="text-gradient-primary">Amazing Together</span>
+          </h2>
+          <p className="text-xl text-color max-w-3xl mx-auto leading-relaxed"> Ready to turn your ideas into reality? I&apos;m here to help you create exceptional digital experiences.</p>
+        </div>
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
+          <div className="space-y-8">
+            <div className="glass-card rounded-3xl p-8 hover:neon-glow transition-all duration-300">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
+                <h3 className="text-2xl font-bold text-gradient-primary">Contact Information</h3>
+              </div>
+              <p className="text-color text-lg mb-8 leading-relaxed">I&apos;m always excited to work on new projects. Let&apos;s discuss how we can bring your vision to life.</p>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4 group cursor-pointer">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow">
+                    <FaMapMarkerAlt className="text-white text-lg"/>
+                  </div>
                   <div>
-                    <span className="font-semibold text-white/80">Address</span>
-                    <div className="text-gray-400 text-sm">Bogor, Indonesia</div>
+                    <span className="font-semibold text-white text-lg block">Location</span>
+                    <span className="text-color">Bogor, Indonesia</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <span className="bg-[#8ed5dd] rounded-full p-2"><FaPhoneAlt className="text-white" size={20}/></span>
-                  <div className="flex flex-col">
-                    <span className="font-semibold text-white/80">Phone Number</span>
-                    <div className="text-gray-400 text-sm">+628...</div>
+                <div className="flex items-center gap-4 group cursor-pointer">
+                  <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow-accent">
+                    <FaEnvelope className="text-white text-lg"/>
+                  </div>
+                  <div>
+                    <span className="font-semibold text-white text-lg block">Email</span>
+                    <span className="text-color">inassamarataqia@gmail.com</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <span className="bg-[#8ed5dd] rounded-full p-2"><FaEnvelope className="text-white" size={20}/></span>
-                  <div className="flex flex-col">
-                    <span className="font-semibold text-white/80">E-Mail</span>
-                    <div className="text-gray-400 text-sm">inassamarataqia@gmail.com</div>
+                <div className="flex items-center gap-4 group cursor-pointer">
+                  <div className="w-12 h-12 bg-gradient-secondary rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow">
+                    <FaPhoneAlt className="text-white text-lg"/>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className="w-full bg-gradient-to-br from-[#0abcd42a] to-black/30 border-t-4 border-[#8ed5dd] p-4 rounded-lg">              
-              <div className="grid grid-cols-3 gap-4 mt-4"> 
-                <div className="flex flex-col items-center hover:text-white gap-1">
-                  <FaGithub size={30} />
-                  <a href="https://github.com/sambatawa" target="_blank" rel="noopener noreferrer" className="text-sm">
-                    sambatawa
-                  </a>
-                </div>
-                <div className="flex flex-col items-center hover:text-white gap-1">
-                  <FaLinkedinIn size={30} />
-                  <a href="https://www.linkedin.com/in/inas-samara-taqia" target="_blank" rel="noopener noreferrer" className="text-sm">Inas Samara Taqia</a>
-                </div>
-                <div className="flex flex-col items-center hover:text-white gap-1">
-                  <FaInstagram size={30}/>
-                  <a href="https://www.instagram.com/sambatawa_/" target="_blank" rel="noopener noreferrer" className="text-sm">@sambatawa_</a>
+                  <div>
+                    <span className="font-semibold text-white text-lg block">Phone</span>
+                    <span className="text-color">Available on request</span>
                   </div>
                 </div>
               </div>
             </div>
-            <form onSubmit={Submit} className="space-y-6 p-5 py-10 bg-gradient-to-tr from-[#0abcd460] to-black/30 rounded-r-[100px] shadow-md"> 
-              <p className="text-xl font-semibold">Or send me a message directly:</p>           
-              <div className="space-y-3 p-2 flex flex-col gap-1">
-                <div className="flex flex-col">
-                  <span className="text-lg text-[#cae7eb] mb-1 mr-4">Name</span>
-                  <input className="w-full p-2 rounded-lg bg-[#0abcd460] border-l-2 border-[#8ed5dd] focus:outline-none focus:ring-2 focus:ring-[#8ed5dd]" type="text" name="name" placeholder="Your Name" value={form.name} onChange={Change} required/>
+            <div className="glass-card rounded-3xl p-8 hover:neon-glow-accent transition-all duration-300">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-2 h-8 bg-gradient-secondary rounded-full"></div>
+                <h3 className="text-2xl font-bold text-gradient-accent">Follow Me</h3>
+              </div>
+              <div className="grid grid-cols-3 gap-4">
+                <a href="https://github.com/sambatawa" className="group glass-button rounded-2xl p-6 text-center transition-all duration-300 hover:scale-105 hover:neon-glow" target="_blank" rel="noopener noreferrer">
+                  <FaGithub className="text-3xl text-color group-hover:text-white mx-auto mb-3 transition-colors"/>
+                  <span className="text-sm text-color group-hover:text-white font-medium">GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/inas-samara-taqia" className="group glass-button rounded-2xl p-6 text-center transition-all duration-300 hover:scale-105 hover:neon-glow-accent" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedinIn className="text-3xl text-color group-hover:text-white mx-auto mb-3 transition-colors"/>
+                  <span className="text-sm text-color group-hover:text-white font-medium">LinkedIn</span>
+                </a>
+                <a href="https://www.instagram.com/sambatawa_/" className="group glass-button rounded-2xl p-6 text-center transition-all duration-300 hover:scale-105 hover:neon-glow" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram className="text-3xl text-color group-hover:text-white mx-auto mb-3 transition-colors"/>
+                  <span className="text-sm text-color group-hover:text-white font-medium">Instagram</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="glass-card rounded-3xl p-8 hover:neon-glow transition-all duration-300">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-2 h-8 bg-gradient-primary rounded-full"></div>
+              <h3 className="text-2xl font-bold text-gradient-accent">Send Message</h3>
+            </div>
+            <form onSubmit={Submit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-color uppercase tracking-wide">Full Name</label>
+                  <input className="w-full p-4 glass-button rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:bg-white/15" placeholder="Your Name" type="text" name="name" value={form.name} onChange={Change} required />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-lg text-[#cae7eb] mb-1 mr-4">Email</span>
-                  <input className="w-full p-2 rounded-lg bg-[#0abcd460] border-l-2 border-[#8ed5dd] focus:outline-none focus:ring-2 focus:ring-[#8ed5dd]" type="email" name="email" placeholder="example@email.com" value={form.email} onChange={Change} required/>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-lg text-[#cae7eb] mb-1 mr-4">Subject</span>
-                  <select className="w-full p-2 rounded-lg bg-[#0abcd460] border-l-2 border-[#8ed5dd] focus:outline-none focus:ring-2 focus:ring-[#8ed5dd]" name="subject" value={form.subject} onChange={Change} required>
-                    <option value="" className="hidden w-full">Select subject</option>
-                    <option value="Collab" className="w-full">Collab</option>
-                    <option value="Work" className="w-full">Work</option>
-                    <option value="Personal" className="w-full">Personal</option>
-                  </select>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-lg text-[#cae7eb] mb-1 mr-4">Message</span>
-                  <textarea className="w-full p-2 rounded-lg bg-[#0abcd460] border-l-2 border-[#8ed5dd] focus:outline-none focus:ring-2 focus:ring-[#8ed5dd] h-32 resize-none text-start" name="message" placeholder="Your Message" value={form.message} onChange={Change} required/>
-                </div>
-                <div className="flex justify-end mt-3">
-                  <button className="w-[10vw] flex justify-center bg-white font-semibold text-[#3ebcca] p-3 rounded-full hover:bg-[#3ebcca] hover:text-white active:scale-105 transition-colors duration-300">Send Message</button>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-color uppercase tracking-wide">Email Address</label>
+                  <input className="w-full p-4 glass-button rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:bg-white/15" placeholder="your@email.com" type="email" name="email" value={form.email} onChange={Change} required />
                 </div>
               </div>
+              <div className="space-y-2">
+                <label className="text-sm font-semibold text-color uppercase tracking-wide">Project Type</label>
+                <select className="w-full p-4 glass-button rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:bg-white/15" name="subject" value={form.subject} onChange={Change} required>
+                  <option value="" className="bg-gray-800 hidden">Select project type</option>
+                  <option value="Collab" className="bg-gray-800">Collaboration</option>
+                  <option value="Work" className="bg-gray-800">Work Opportunity</option>
+                  <option value="Personal" className="bg-gray-800">Personal Project</option>
+                </select>
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-semibold text-color uppercase tracking-wide">Project Details</label>
+                <textarea className="w-full p-4 glass-button rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 h-32 resize-none hover:bg-white/15" name="message" placeholder="Tell me about your project, timeline, and goals Or your story..." value={form.message} onChange={Change} required />
+              </div>
+              <button className="w-full bg-gradient-primary hover:bg-gradient-accent text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 hover:scale-105 hover:neon-glow active:scale-95 relative overflow-hidden group">
+                <span className="relative z-10">Send Message</span>
+                <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </button>
             </form>
-          
+          </div>
         </div>
-        <div className="w-screen h-[500px] bg-gray-300 flex items-center justify-center">
-            
-        </div>
+      </div>
     </div>
   )
 }

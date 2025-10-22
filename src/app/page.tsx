@@ -9,9 +9,10 @@ export default function Home() {
     <>
       <CustomCursor />    
       <Navbar />
-      <div className="flex w-full max-w-screen min-h-screen flex-col relative bg-black m-0 p-0 overflow-x-hidden">
-        <Image src={bg} priority={false} alt="Background" fill className="object-cover w-full h-full absolute inset-0 z-0" />
-        <div className="w-full h-full flex flex-col items-center bg-black/60 backdrop-blur-xl z-10">
+      <div className="flex w-full max-w-screen min-h-screen flex-col relative bg-gradient-dark m-0 p-0 overflow-x-hidden">
+        <Image src={bg} priority={false} alt="Background" fill className="object-cover w-full h-full absolute inset-0 z-0 opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-cyan-900/20 z-5"></div>
+        <div className="w-full h-full flex flex-col items-center relative z-10">
           <LandingPage />
         </div>       
       </div>

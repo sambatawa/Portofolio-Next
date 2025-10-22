@@ -67,53 +67,52 @@ const Navbar = () => {
 
 
   return (
-    <nav className={`fixed m-8 w-[90vw] ml-0 left-1/2 -translate-x-1/2 px-2 py-3  rounded-full flex items-center justify-between bg-white/10 backdrop-blur-xl z-100 shadow transition-all ${animateNavbar? 'animate-slide-down' : 'opacity-0'}`}>        
+    <nav className={`fixed m-8 w-[90vw] ml-0 left-1/2 -translate-x-1/2 px-6 py-4 rounded-full flex items-center justify-between glass-card z-100 transition-all ${animateNavbar? 'animate-slide-up' : 'opacity-0'}`}>        
       <div className={`${playfair.className} px-4 sm:px-6`}>
-          <span className="text-transparent bg-clip-text bg-gradient-2 font-bold text-[20px] md:text-[27px]">
+          <span className="text-gradient-primary font-bold text-xl md:text-2xl">
               Sambatawa.com
           </span>
       </div>       
-      <div className="hidden 2xl:flex items-center">
+      <div className="hidden 2xl:flex items-center gap-2">
         {sections.map((section) => (
-          <a key={section.id} href={`#${section.id}`} className={`relative font-medium text-[16px] md:text-[20px] text-color flex items-center justify-center rounded-[50px] px-4 md:px-6 transition-all animate-slide-in duration-300 ${active === section.id? "p-2 bg-[#D9D9D9]/10 border border-[#D9D9D9]/20 scale-120 mx-4": ""}`}>
+          <a key={section.id} href={`#${section.id}`} className={`relative font-medium text-[16px] md:text-lg text-color flex items-center justify-center rounded-full px-6 py-3 transition-all duration-300 hover:text-white group ${active === section.id? "glass-button neon-glow": "hover:glass-button"}`}>
             {section.label}
-            <div className={`w-40 h-1 absolute -bottom-2 left-[50%] -translate-x-[50%] rounded-full transition ${active === section.id ? "opacity-100" : "opacity-0"}`}></div>
+            {active === section.id && (
+              <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-1 bg-gradient-accent rounded-full"></div>
+            )}
           </a>
         ))}
       </div>
       <div className="flex items-center gap-4 2xl:gap-6">
-        <div className="hidden 2xl:flex gap-4 items-center">
-          {icons.map(({ link, label, icon: Icon, newTab }) => (
-            <a key={label} href={link} target={newTab ? "_blank" : "_self"} rel="noopener noreferrer" aria-label={label} className="text-color border border-white rounded-full p-3 bounce transition">
-              <Icon size={20} />
+        <div className="hidden 2xl:flex gap-3 items-center">
+          {icons.map(({ link, label, icon: Icon, newTab }, index) => (
+            <a key={label} href={link} target={newTab ? "_blank" : "_self"} rel="noopener noreferrer" aria-label={label} className="glass-button p-3 rounded-full text-color hover:text-white hover:neon-glow transition-all duration-300 group bounce" style={{ animationDelay: `${index * 0.2}s` }}>
+              <Icon size={20} className="group-hover:scale-110 transition-transform" />
             </a>
           ))}
       </div>
-      <div className="border-3 border-white/30 px-3 2xl:px-7 py-3 rounded-full bg-gradient-3 bg-opacity-20 flex items-center justify-center hover:bg-gradient-to-br hover:from-[#3c2143] hover:to-[#2f5b5e] hover:border-white/70 transition z-10">
-        <span className="hidden 2xl:flex text-[#3642aeff] font-semibold text-[20px] md:text-[20px] hover:text-white transition">Connect Me </span>
-        <MdConnectWithoutContact size={24} className="2xl:hidden text-white"/>
+      <div className="glass-button px-6 py-3 rounded-full flex items-center justify-center hover:neon-glow transition-all duration-300 group">
+        <span className="hidden 2xl:flex text-gradient-accent font-semibold text-lg hover:text-white transition">Connect</span>
+        <MdConnectWithoutContact size={24} className="2xl:hidden text-gradient-accent group-hover:text-white transition-colors"/>
       </div> 
       <div className="2xl:hidden">
-        <button onClick={() => setMenuOpen(!menuOpen)} className="text-color text-[28px] focus:outline-none p-2">
-          {menuOpen ? <FaTimes /> : <FaBars />}
+        <button onClick={() => setMenuOpen(!menuOpen)} className="glass-button p-3 rounded-full text-color hover:text-white transition-all duration-300">
+          {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
         </button>
       </div>
       </div>
         {menuOpen && (
-            <div className="absolute top-25 right-0 w-[90vw] bg-gradient-to-br from-[#2f5b5e] to-[#3c2143] backdrop-blur-2xl flex flex-col items-center gap-5 py-20 px-10 rounded-br-[70px] rounded-bl-[70px] rounded-tl-[100px] shadow-lg 2xl:hidden z-50 animate-slide-down duration-300">
+            <div className="absolute top-20 right-0 w-[90vw] bg-black mt-5 backdrop-blur-2xl flex flex-col items-center gap-6 py-12 px-8 rounded-3xl shadow-lg 2xl:hidden z-50 animate-slide-up duration-300">
             {sections.map((section) => (
                 <a onClick={() => setMenuOpen(false)} key={section.id} href={`#${section.id}`}
-                className={`font-medium text-[25px] text-white py-2 px-6 w-full text-center ${active === section.id? "font-bold bg-[#D9D9D9]/10 border border-[#D9D9D9]/30 rounded-l-[50px]": ""}`}>
+                className={`font-medium text-xl text-color py-3 px-8 w-full text-center rounded-full transition-all duration-300 ${active === section.id? "glass-button neon-glow text-white": "hover:glass-button"}`}>
                 {section.label}
                 </a>
             ))}
-            <div className="flex gap-2 sm:gap-5 mt-6">
-                {icons.map(({ link, label, icon: Icon, newTab }) => (
-                <a key={label} href={link} target={newTab ? "_blank" : "_self"} rel="noopener noreferrer" aria-label={label} className="text-white text-[25px] border-2 group relative border-white/30 p-3 rounded-[10px] hover:text-gray-300 transition">
-                    <Icon size={24} />
-                    <span className="absolute bottom-full mb-2 px-2 py-1 text-sm text-white bg-black/80 rounded-md opacity-0 group-hover:opacity-100 group-hover:translate-y-[-2px] transition-all duration-200 whitespace-nowrap">
-                        {label}
-                    </span>
+            <div className="flex gap-4 mt-6">
+                {icons.map(({ link, label, icon: Icon, newTab }, index) => (
+                <a key={label} href={link} target={newTab ? "_blank" : "_self"} rel="noopener noreferrer" aria-label={label} className="glass-button p-4 rounded-full text-color hover:text-white hover:neon-glow transition-all duration-300 group bounce" style={{ animationDelay: `${index * 0.2}s` }}>
+                    <Icon size={24} className="group-hover:scale-110 transition-transform" />
                 </a>
                 ))}
             </div>

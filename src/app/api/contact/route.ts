@@ -115,15 +115,14 @@ export async function POST(req: Request) {
                         ${String(message)}
                     </blockquote>
                     <p style="font-size:12px;color:#555;">Dikirim pada: ${time} WIB</p>
-                </div>
-            `,
+                </div>`,
         });
         return NextResponse.json(
             { message: "Pesan berhasil dikirim", success: true },
             { status: 200 }
         );
-    } catch (error) {
-        console.error("Error mengirim email:", error);
+        } catch (error) {
+            console.error("Error mengirim email:", error);
         return NextResponse.json(
             { message: "Gagal mengirim pesan", success: false },
             { status: 500 }

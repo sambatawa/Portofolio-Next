@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 import { FaGlobe, FaRobot, FaServer, FaChartBar } from "react-icons/fa";
+import { SiPython, SiJavascript, SiNextdotjs, SiReact, SiNodedotjs } from 'react-icons/si';
+import { AiOutlineRobot } from "react-icons/ai";
 import Project from "@/components/Project";
 import Contact from "@/components/Contact";
 
@@ -58,144 +60,504 @@ const LandingPage = () => {
   return (
     <>
       <section id="Page1" className="relative min-h-screen top-20 flex flex-col items-center justify-center z-40 px-4 2xl:px-0">
-        <div className="w-[90vw] 2xl:w-[80vw] h-[90vh] 2xl:h-[70vh] flex flex-col 2xl:flex-row gap-10 2xl:gap-0 animate-slide-down transition-all duration-300">
-          <div className="w-[90vw] 2xl:w-[60vw] flex flex-col items-center text-center 2xl:text-start 2xl:items-start justify-center px-5 xl:px-20 2xl:border-b 2xl:border-white/50 ">
-            <h2 className="text-sm xl:text-xl text-color font-semibold pl-5 pr-5 py-3 border-r-3 border-l-3  animate-slide-down transition-all duration-300">Machine Learning and Web Enthusiast</h2>
-            <h1 className="text-4xl 2xl:text-6xl font-bold text-white mt-2 py-1 gradient-text animate-slide-down transition-all duration-300">I&apos;m Inas Samara Taqia</h1>
-            <p className="text-xl xl:text-2xl text-color mt-7 animate-slide-down transition-all duration-300">A tech enthusiast focused on machine learning and web development (specifically in backend area). Interested in building intelligent applications that integrate predictive models with responsive web platforms.</p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-8 2xl:mt-20 sm:border-t sm:border-r sm:border-white justify-center items-center py-4 sm:pr-10 rounded-full animate-slide-down transition-all duration-300">
-              <a href="#Contact" className="whitespace-nowrap text-2xl font-medium mt-6 px-6 md:px-30 py-3 bg-gradient-to-r from-[#D9D9D9] to-[#F2F2F2] text-black rounded-full hover:scale-105 hover:shadow-[inset_0_4px_6px_rgba(0,0,0,0.1)] transition-all duration-300">
-                Collab yuk
+        <div className="w-[90vw] 2xl:w-[80vw] h-[90vh] 2xl:h-[70vh] flex flex-col 2xl:flex-row gap-10 2xl:gap-0 animate-slide-up transition-all duration-300">
+          <div className="w-[90vw] 2xl:w-[60vw] flex flex-col items-center text-center 2xl:text-start 2xl:items-start justify-center px-5 xl:px-20">
+            <div className="glass-card p-6 mb-8 animate-slide-left rounded-r-full">
+              <h2 className="text-sm xl:text-lg border-r-3 border-l-3 border-white/60 px-3 py-2 rounded-full text-gradient-accent font-semibold tracking-wider uppercase">
+              Machine Learning and Web Enthusiast
+              </h2>
+            </div>
+            <h1 className="text-4xl 2xl:text-7xl font-bold text-white mt-2 py-1 gradient-text animate-slide-left">
+              I&apos;m Inas Samara Taqia
+            </h1>
+            <p className="text-xl text-color mt-7 max-w-2xl animate-slide-left">
+              Building the future of web applications with AI/ML integration and Web3 technologies. 
+              Passionate about creating intelligent, decentralized solutions that push the boundaries of what&apos;s possible.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 mt-8 2xl:mt-20 animate-slide-left">
+              <a href="#Contact" className="group relative px-8 py-4 bg-gradient-primary text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 neon-glow">
+                <span className="relative z-10">Let&apos;s Collaborate</span>
+                <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
-              <a href="#About" className="whitespace-nowrap text-2xl mt-6 px-4 py-2 bg-transparent border-white border text-color rounded-full hover:scale-105 hover:border-3 transition-all duration-300">
-                CV
+              <a href="#About" className="glass-button px-8 py-4 text-white font-semibold rounded-full hover:scale-105 transition-all duration-300">
+                View Resume
               </a>
             </div>
           </div>
-          <div className="order-first 2xl:order-none rounded-b-3xl 2xl:rounded-l-none 2xl:rounded-r-3xl w-full 2xl:w-[40vw] h-[500px] 2xl:h-full relative overflow-hidden z-49 animate-slide-down transition-all duration-300">
-            <Image src="/foto.jpg" priority={false} alt="Foto" fill sizes="(min-width: 1536px) 40vw, 90vw" style={{ objectFit: "cover", objectPosition: "center"}}/>
-            <span className={`${poppins.className} italic relative inset-0 flex items-center justify-center z-50 text-white text-[50px] lg:text-[80px] px-10 font-bold`}>Sambatawa</span> 
-            <span className="absolute left-0 right-0 bottom-0 h-[100px] flex items-center justify-center z-50 text-white text-3xl lg:text-4xl border border-t-3 bg-gradient-2 font-medium">
-              Bogor, Indonesia
-            </span>        
+          <div className="order-first 2xl:order-none w-full 2xl:w-[40vw] h-[500px] 2xl:h-full relative overflow-hidden z-49 animate-slide-right">
+            <div className="glass-card h-full p-8 flex flex-col items-center justify-center relative">
+              <div className="absolute inset-0 bg-gradient-dark opacity-50 rounded-2xl"></div>
+              <Image src="/foto.jpg" className="object-cover rounded-2xl" sizes="(min-width: 1536px) 40vw, 90vw" priority={false} alt="Profile" fill />
+              <div className="relative z-10 text-center">
+                <span className={`${poppins.className} text-white text-[50px] lg:text-[80px] font-bold text-gradient-glow`}>Sambatawa</span> 
+                <div className="mt-4 px-6 py-3 glass-card rounded-full">
+                  <span className="text-white text-xl lg:text-2xl font-medium">Bogor, Indonesia</span>        
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>   
-      <div
-        id="Page2"
-        className="scroll-container flex flex-col h-[80vh] 2xl:h-[80vh] w-full max-w-[80vw] mx-auto my-auto mt-40 mb-auto overflow-y-auto overflow-x-hidden scroll-smooth snap-y snap-mandatory bg-gradient-to-br from-[#000000]/30 to-[#3a3a3a]/30 rounded-3xl animate-slide-up duration-300">
-        <section id="About" className="scroll-mt-28 p-10 px-30 w-full max-w-[80vw] mx-auto h-full snap-start flex flex-col gap-8 text-white">
-          <h2 className="text-4xl md:text-5xl text-center font-bold ">Who is Sambatawa?</h2>
-          <div className="w-full gap-8 items-center">
-            <div className="space-y-5">
-              <div>
-                <p className="text-lg text-gray-300 text-center">inassamarataqia@gmail.com | 21 now</p>
-              </div>
-              <p className="text-xl leading-relaxed text-center justify-between text-gray-200">Hi, I&apos;m Inas Samara Taqia as web developer learning and experimenting to build responsive and accessible interfaces.
-                While most of my experience has been in front-end with some frameworks/libraries, depending on project. I&apos;m excited about integrating AI/ML features into my projects with exploring how machine learning can improve user interactions, personalization, and functionality. 
-                I&apos;m also picking up backend fundamentals along the way, and right now my passion is combining backend and AI/ML to create smart, intuitive web experiences.
-              </p>
-              <div className="flex items-center gap-3 justify-center text-gray-300">
-                <span className="h-px w-30 bg-gray-500" />
-                <span className="h-px w-60 bg-gray-500" />
-                <span className="h-px w-90 bg-gray-500" />               
-              </div>
+      <div id="Page2" className="scroll-container flex flex-col h-[80vh] 2xl:h-[80vh] w-full max-w-[80vw] mx-auto my-auto mt-40 mb-10 overflow-y-auto overflow-x-hidden bg-gradient-dark scroll-smooth snap-y snap-mandatory rounded-4xl animate-slide-up duration-300">
+        <section id="About" className="scroll-mt-28 p-10 px-30 w-full max-w-[80vw] mx-auto snap-start flex flex-col gap-8 text-white mb-25">
+          <div className="text-center mb-16">
+            <div className="inline-block">
+              <span className="text-sm font-semibold text-gradient-accent uppercase tracking-wider">About Me</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold text-white mt-4 mb-6">
+              Who is 
+              <span className="text-gradient-primary"> Sambatawa?</span>
+            </h2>
+            <div className="glass-card rounded-b-3xl p-4 inline-block">
+              <p className="text-lg text-gradient-accent font-medium">inassamarataqia@gmail.com | 21 years old</p>
             </div>
           </div>
-          <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-5">
-            <div className="space-y-3">
-              <h3 className="text-3xl font-semibold tracking-wide text-gray-100">Software Skills</h3>
-              {[
-                { label: 'Python', persen: '85%' },
-                { label: 'Javascript', persen: '70%' },
-                { label: 'Next.js', persen: '65%' },
-                { label: 'Tailwind CSS', persen: '60%' },
-                { label: 'Other', persen: '10%' },
-              ].map(({label, persen}) => (
-                <div key={label} className="space-y-1">
-                  <div className="flex items-center justify-between text-xl text-gray-300">
-                    <span>{label}</span>
-                    <span>{persen}</span>
-                  </div>
-                  <div className="h-5 w-full rounded bg-gray-700/70">
-                    <div className="h-5 rounded bg-blue-300" style={{ width: persen }} />
+          
+          <div className="mb-15 animate-fade-in">
+            <p className="text-xl leading-relaxed text-color text-center mx-auto">
+              Hi, I&apos;m Inas Samara Taqia, a passionate developer building the next generation of web applications. 
+              I specialize in creating intelligent, responsive interfaces that seamlessly integrate AI/ML capabilities with modern web technologies.
+              My journey spans from frontend development to backend architecture, with a deep focus on how machine learning can revolutionize user experiences and create more intuitive, personalized digital solutions.
+            </p>
+          </div>
+          <div className="grid grid-rows-1 lg:grid-rows-2 gap-20 w-full">
+            <div className="h-fit pb-30 glass-card rounded-3xl p-8 space-y-6 hover:neon-glow transition-all duration-300">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
+                  <h3 className="text-2xl font-bold text-gradient-primary">Technical Skills</h3>
+                </div>
+                  <div className="relative h-full w-full bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-6 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 animate-pulse"></div>  
+                    <div className="absolute inset-0">
+                      {[...Array(20)].map((_, i) => {
+                        const left = (i * 7.3) % 100;
+                        const top = (i * 11.7) % 100;
+                        const delay = (i * 0.3) % 3;
+                        const duration = 2 + (i * 0.1) % 2;
+                        
+                        return (
+                          <div className="absolute w-1 h-1 bg-white/20 rounded-full animate-pulse" key={i}
+                            style={{
+                              left: `${left}%`,
+                              top: `${top}%`,
+                              animationDelay: `${delay}s`,
+                              animationDuration: `${duration}s`
+                            }} />
+                        );
+                      })}
+                    </div>
+                    <svg className="w-full h-full relative z-10" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
+                      <defs>
+                        <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="#f59e0b" />
+                          <stop offset="20%" stopColor="#eab308" />
+                          <stop offset="40%" stopColor="#6b7280" />
+                          <stop offset="60%" stopColor="#06b6d4" />
+                          <stop offset="80%" stopColor="#10b981" />
+                          <stop offset="100%" stopColor="#8b5cf6" />
+                        </linearGradient>
+                        <filter id="glow">
+                          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                          <feMerge> 
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                          </feMerge>
+                        </filter>
+                      </defs>
+                      <g opacity="0.3">
+                        {[0, 25, 50, 75, 100].map((value, i) => (
+                          <g key={value}>
+                            <line className="animate-pulse"
+                              x1="50" y1={200 - (value * 1.5)} 
+                              x2="350" y2={200 - (value * 1.5)} 
+                              stroke="url(#chartGradient)" 
+                              strokeWidth="1"
+                              strokeDasharray="5,5"
+                              style={{animationDelay: `${i * 0.2}s`}} />
+                            <text className="font-semibold"
+                              x="45" y={205 - (value * 1.5)} 
+                              fill="rgba(255,255,255,0.7)" 
+                              fontSize="12" 
+                              textAnchor="end" >
+                              {value}%
+                            </text>
+                          </g>
+                        ))}
+                      </g>
+                      
+                      {[
+                        { label: 'Python', x: 80, color: '#f59e0b', icon: <SiPython /> },
+                        { label: 'JS',     x: 140, color: '#eab308', icon: <SiJavascript /> },
+                        { label: 'Next',   x: 200, color: '#6b7280', icon: <SiNextdotjs />},
+                        { label: 'React',  x: 260, color: '#06b6d4', icon: <SiReact /> },
+                        { label: 'Node',   x: 320, color: '#10b981', icon: <SiNodedotjs /> },
+                        { label: 'AI',     x: 380, color: '#8b5cf6', icon: <AiOutlineRobot /> },
+                      ].map(({label, x, icon}) => (
+                        <g key={label}>
+                          <text className="font-medium text-white text-sm" fill="rgba(255,255,255,0.8)" x={x} y="240" textAnchor="middle" >
+                            {icon}
+                          </text>
+                          <text className="font-medium text-[10px]" fill="rgba(255,255,255,0.6)" x={x} y="255" textAnchor="middle" >
+                            {label}
+                          </text>
+                        </g>
+                      ))}
+                      
+                      <path
+                        d="M 80,117.5 Q 110,100 140,125 Q 170,150 200,137.5 Q 230,125 260,137.5 Q 290,150 320,143.75 Q 350,137.5 380,150"
+                        fill="none"
+                        stroke="url(#chartGradient)"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        filter="url(#glow)"
+                        className="animate-pulse"
+                        style={{
+                          strokeDasharray: "1000",
+                          strokeDashoffset: "1000",
+                          animation: "drawLine 3s ease-in-out forwards"
+                        }}
+                      />
+                      {[
+                        { label: 'Python', persen: 85, x: 80, color: '#f59e0b' },
+                        { label: 'JavaScript', persen: 80, x: 140, color: '#eab308' },
+                        { label: 'Next.js', persen: 75, x: 200, color: '#6b7280' },
+                        { label: 'React', persen: 70, x: 260, color: '#06b6d4' },
+                        { label: 'Node.js', persen: 65, x: 320, color: '#10b981' },
+                        { label: 'AI/ML', persen: 60, x: 380, color: '#8b5cf6' },
+                      ].map(({label, persen, x, color}, index) => {
+                        const y = 200 - (persen * 1.5);
+                        return (
+                          <g key={label}>
+                            <circle className="animate-ping" fill={color} cx={x} cy={y} r="8" opacity="0.3"
+                              style={{animationDelay: `${index * 0.3}s`}}/>
+                            <circle className="transition-all duration-300 hover:r-8 hover:stroke-4" fill={color} stroke="white" strokeWidth="2" cx={x} cy={y} r="6"
+                              filter="url(#glow)"
+                              style={{
+                                animationDelay: `${index * 0.3}s`,
+                                animation: "bounceIn 0.6s ease-out forwards"
+                              }}/>
+                            <text className="drop-shadow-lg font-bold text-sm" fill={color} textAnchor="middle" x={x} y={y - 15} 
+                              style={{
+                                animationDelay: `${index * 0.3}s`,
+                                animation: "fadeInUp 0.8s ease-out forwards"
+                              }}>
+                              {persen}%
+                            </text>
+                            {index < 5 && (
+                              <line x1={x} y1={y} 
+                                x2={[
+                                  { x: 80, y: 200 - (85 * 1.5) },
+                                  { x: 140, y: 200 - (80 * 1.5) },
+                                  { x: 200, y: 200 - (75 * 1.5) },
+                                  { x: 260, y: 200 - (70 * 1.5) },
+                                  { x: 320, y: 200 - (65 * 1.5) },
+                                  { x: 380, y: 200 - (60 * 1.5) },
+                                ][index + 1].x} 
+                                y2={[
+                                  { x: 80, y: 200 - (85 * 1.5) },
+                                  { x: 140, y: 200 - (80 * 1.5) },
+                                  { x: 200, y: 200 - (75 * 1.5) },
+                                  { x: 260, y: 200 - (70 * 1.5) },
+                                  { x: 320, y: 200 - (65 * 1.5) },
+                                  { x: 380, y: 200 - (60 * 1.5) },
+                                ][index + 1].y}
+                                stroke={color} 
+                                strokeWidth="3" 
+                                strokeLinecap="round"
+                                filter="url(#glow)"
+                                className="transition-all duration-500"
+                                style={{
+                                  strokeDasharray: "100",
+                                  strokeDashoffset: "100",
+                                  animationDelay: `${index * 0.2}s`,
+                                  animation: "drawLine 1s ease-out forwards"
+                                }}
+                              />
+                            )}
+                          </g>
+                        );
+                      })}
+                    </svg>
                   </div>
                 </div>
-              ))}
-            </div>
-            <div className="space-y-6">
-              <div className="space-y-1">
-                <h3 className="text-3xl font-semibold tracking-wide text-gray-100">Education</h3>
-                <p className="text-xl text-gray-300">Computer Engineering in Vocational School</p>
-                <p className="text-lg text-gray-400">IPB University</p>
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-3xl font-semibold tracking-wide text-gray-100">Personal Skills</h3>
-                <ul className="grid grid-cols-2 gap-2 text-xl text-gray-300">
-                  <li>Creativity</li>
-                  <li>Problem Solving</li>
-                  <li>Teamwork</li>
-                  <li>Communication</li>
-                </ul>
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-3xl font-semibold tracking-wide text-gray-100">Hobbies and Interests</h3>
-                <div className="flex flex-wrap gap-4">
-                  {["Music", "Writing", "Reading", "Travel", "Learn code", "3D Design CAD"].map((h) => (
-                    <span key={h} className="px-3 py-1 rounded-full border border-white/20 text-lg text-gray-200">{h}</span>
-                  ))}
+                <div className="space-y-8 px-20">
+                  <div className="text-left">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
+                        <h3 className="text-2xl font-bold text-gradient-primary mb-6">Education</h3>
+                      </div>
+                    <div className="flex gap-4 group cursor-pointer">
+                      <div className="w-12 h-12 bg-gradient-dark rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow">
+                        <FaChartBar className="text-white/60 text-lg"/>
+                      </div>
+                      <div className="text-left">
+                        <span className="font-semibold text-white text-lg block">Computer Engineering</span>
+                        <span className="text-color">IPB University</span>
+                        <span className="text-sm text-gray-400 block">Vocational School Program</span>
+                      </div>
+                    </div>
+                </div>
+                  <div className="text-left">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
+                      <h3 className="text-2xl font-bold text-gradient-primary mb-6">Hobby and Interests</h3>
+                      </div>
+                    <div className="flex flex-wrap gap-3 justify-between">
+                      {["Web3", "AI/ML", "Blockchain", "Music", "Design", "Travel", "Writing", "Reading", "Learn code", "3D Design CAD"].map((interest) => (
+                        <span key={interest} className="px-4 py-2 rounded-full bg-gradient-dark text-white/80 text-sm font-medium hover:scale-105 transition-all duration-300 cursor-pointer"> {interest} </span>))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="space-y-3">
-              <div className="space-y-2">
-                <h3 className="text-3xl font-semibold tracking-wide text-gray-100">What Can I Do?</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                    <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700/50 hover:border-white/50 transition-all">
-                      <div className="flex flex-col items-center gap-3 mb-3 hover:sc">
-                        <div className="w-8 h-5 bg-blue-300 rounded-lg flex items-center justify-center">
-                          <FaGlobe className="text-[#157fb1] w-4 h-4" />
+            <div className="space-y-8">
+              <div className="text-center mb-16">
+                <div className="inline-block">
+                  <span className="text-sm font-semibold text-gradient-accent uppercase tracking-wider">What I Build</span>
+                </div>
+                <h3 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-4">
+                  Creating 
+                  <span className="text-gradient-primary"> Digital Solutions</span>
+                </h3>
+                <p className="text-lg text-color max-w-2xl mx-auto">
+                  Transforming ideas into powerful, scalable applications that drive innovation
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 p-8 hover:from-blue-500/20 hover:via-purple-500/20 hover:to-pink-500/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 animate-pulse"></div>
+                  <div className="absolute inset-0">
+                    {[...Array(15)].map((_, i) => {
+                      const left = (i * 8.7) % 100;
+                      const top = (i * 13.2) % 100;
+                      const delay = (i * 0.4) % 3;
+                      const duration = 2 + (i * 0.15) % 2;
+                      return (
+                        <div
+                          key={i}
+                          className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-pulse"
+                          style={{
+                            left: `${left}%`,
+                            top: `${top}%`,
+                            animationDelay: `${delay}s`,
+                            animationDuration: `${duration}s`
+                          }}
+                        />
+                      );
+                    })}
+                  </div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-6 mb-6">
+                      <div className="relative">
+                        <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-blue-500/50">
+                          <FaGlobe className="text-white text-3xl" />
                         </div>
-                        <h4 className="text-white text-xl font-semibold">Web Development</h4>
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
                       </div>
-                      <p className="text-gray-300 text-sm">Creating responsive, performant web applications.</p>
-                    </div>
-                  <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700/50 hover:border-white/50 transition-all">
-                    <div className="flex flex-col items-center gap-3 mb-3">
-                      <div className="w-8 h-5 bg-blue-300 rounded-lg flex items-center justify-center">
-                        <FaRobot className="text-[#157fb1] w-4 h-4" />
+                      <div>
+                        <h4 className="text-white text-2xl font-bold mb-2 group-hover:text-gradient-primary transition-colors duration-300">
+                          Web Applications
+                        </h4>
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                          <span className="text-blue-400 text-sm font-medium">Full Stack Development</span>
+                        </div>
                       </div>
-                      <h4 className="text-white font-semibold text-xl">AI/ML Integration</h4>
                     </div>
-                    <p className="text-gray-300 text-sm">Integrating AI/ML for enhanced web experiences.</p>
+                    <p className="text-color leading-relaxed mb-6">
+                      Modern, responsive web applications built with cutting-edge technologies, 
+                      optimized for performance and user experience.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {['React', 'Next.js', 'TypeScript', 'Tailwind'].map((tech) => (
+                        <span key={tech} className="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs font-medium rounded-full border border-blue-500/30">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700/50 hover:border-white/50 transition-all">
-                    <div className="flex flex-col items-center gap-3 mb-3">
-                      <div className="w-8 h-5 bg-blue-300 rounded-lg flex items-center justify-center">
-                        <FaServer className="text-[#157fb1] w-4 h-4" />
-                      </div>
-                      <h4 className="text-white font-semibold text-xl">Backend</h4>
-                    </div>
-                    <p className="text-gray-300 text-sm">Developing backend, APIs, and databases web applications.</p>
+                </div>
+                
+                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-red-500/10 p-8 hover:from-purple-500/20 hover:via-pink-500/20 hover:to-red-500/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-red-500/5 animate-pulse"></div>
+                  <div className="absolute inset-0">
+                    {[...Array(15)].map((_, i) => {
+                      const left = (i * 9.1) % 100;
+                      const top = (i * 14.5) % 100;
+                      const delay = (i * 0.5) % 3;
+                      const duration = 2 + (i * 0.2) % 2;
+                      
+                      return (
+                        <div
+                          key={i}
+                          className="absolute w-1 h-1 bg-purple-400/30 rounded-full animate-pulse"
+                          style={{
+                            left: `${left}%`,
+                            top: `${top}%`,
+                            animationDelay: `${delay}s`,
+                            animationDuration: `${duration}s`
+                          }}
+                        />
+                      );
+                    })}
                   </div>
-                  <div className="bg-gray-800/50 rounded-lg p-4 border border-gray-700/50 hover:border-white/50 transition-all">
-                    <div className="flex flex-col items-center gap-3 mb-3">
-                      <div className="w-8 h-5 bg-blue-300 rounded-lg flex items-center justify-center">
-                        <FaChartBar className="text-[#157fb1] w-4 h-4" />
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-6 mb-6">
+                      <div className="relative">
+                        <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-purple-500/50">
+                          <FaRobot className="text-white text-3xl" />
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
                       </div>
-                      <h4 className="text-white font-semibold text-xl">Data Scientist</h4>
+                      <div>
+                        <h4 className="text-white text-2xl font-bold mb-2 group-hover:text-gradient-accent transition-colors duration-300">
+                          AI Integration
+                        </h4>
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                          <span className="text-purple-400 text-sm font-medium">Machine Learning</span>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-gray-300 text-sm">Building models and algorithms to analyze and interpret data for insights.</p>
+                    <p className="text-color leading-relaxed mb-6">
+                      Intelligent features powered by machine learning algorithms, 
+                      creating smarter and more intuitive user experiences.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {['TensorFlow', 'Python', 'OpenAI', 'ML Models'].map((tech) => (
+                        <span key={tech} className="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs font-medium rounded-full border border-purple-500/30">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 p-8 hover:from-green-500/20 hover:via-emerald-500/20 hover:to-teal-500/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25">
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 via-emerald-500/5 to-teal-500/5 animate-pulse"></div>
+                  <div className="absolute inset-0">
+                    {[...Array(15)].map((_, i) => {
+                      const left = (i * 10.3) % 100;
+                      const top = (i * 15.8) % 100;
+                      const delay = (i * 0.6) % 3;
+                      const duration = 2 + (i * 0.25) % 2;
+                      
+                      return (
+                        <div
+                          key={i}
+                          className="absolute w-1 h-1 bg-green-400/30 rounded-full animate-pulse"
+                          style={{
+                            left: `${left}%`,
+                            top: `${top}%`,
+                            animationDelay: `${delay}s`,
+                            animationDuration: `${duration}s`
+                          }}
+                        />
+                      );
+                    })}
+                  </div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-6 mb-6">
+                      <div className="relative">
+                        <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-green-500/50">
+                          <FaServer className="text-white text-3xl" />
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+                      </div>
+                      <div>
+                        <h4 className="text-white text-2xl font-bold mb-2 group-hover:text-gradient-secondary transition-colors duration-300">
+                          Backend Systems
+                        </h4>
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                          <span className="text-green-400 text-sm font-medium">Server Architecture</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-color leading-relaxed mb-6">
+                      Scalable APIs and server architectures designed for high performance, 
+                      reliability, and seamless integration.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {['Node.js', 'Express', 'MongoDB', 'Docker'].map((tech) => (
+                        <span key={tech} className="px-3 py-1 bg-green-500/20 text-green-300 text-xs font-medium rounded-full border border-green-500/30">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange-500/10 via-red-500/10 to-pink-500/10 p-8 hover:from-orange-500/20 hover:via-red-500/20 hover:to-pink-500/20 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/25">
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-red-500/5 to-pink-500/5 animate-pulse"></div>
+                  <div className="absolute inset-0">
+                    {[...Array(15)].map((_, i) => {
+                      const left = (i * 11.5) % 100;
+                      const top = (i * 17.2) % 100;
+                      const delay = (i * 0.7) % 3;
+                      const duration = 2 + (i * 0.3) % 2;
+                      
+                      return (
+                        <div
+                          key={i}
+                          className="absolute w-1 h-1 bg-orange-400/30 rounded-full animate-pulse"
+                          style={{
+                            left: `${left}%`,
+                            top: `${top}%`,
+                            animationDelay: `${delay}s`,
+                            animationDuration: `${duration}s`
+                          }}
+                        />
+                      );
+                    })}
+                  </div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-6 mb-6">
+                      <div className="relative">
+                        <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-orange-500/50">
+                          <FaChartBar className="text-white text-3xl" />
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-pink-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+                      </div>
+                      <div>
+                        <h4 className="text-white text-2xl font-bold mb-2 group-hover:text-gradient-to-r group-hover:from-orange-400 group-hover:to-pink-400 transition-colors duration-300">
+                          Data Solutions
+                        </h4>
+                        <div className="flex items-center gap-2">
+                          <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+                          <span className="text-orange-400 text-sm font-medium">Analytics & Visualization</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-color leading-relaxed mb-6">
+                      Advanced data analysis and visualization tools that transform 
+                      complex information into actionable business insights.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {['Python', 'Jupyter'].map((tech) => (
+                        <span key={tech} className="px-3 py-1 bg-orange-500/20 text-orange-300 text-xs font-medium rounded-full border border-orange-500/30">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section id="Projects" className="scroll-mt-28 p-10 h-screen w-screen max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">    
+        <section id="Projects" className="scroll-mt-28 p-10 w-full max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">    
           <Project />
         </section>
-        <section id="Contact" className="scroll-mt-28 w-full max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">
+        <section id="Contact" className="scroll-mt-28 p-10 w-full max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">
           <Contact />
         </section>
       </div>

@@ -59,15 +59,15 @@ const LandingPage = () => {
 
   return (
     <>
-      <section id="Page1" className="relative min-h-screen top-20 flex flex-col items-center justify-center z-40 px-4 2xl:px-0">
-        <div className="w-[90vw] 2xl:w-[80vw] h-[90vh] 2xl:h-[70vh] flex flex-col 2xl:flex-row gap-10 2xl:gap-0 animate-slide-up transition-all duration-300">
+      <section id="Page1" className="relative min-h-screen top-10 flex flex-col items-center justify-center z-40 px-4 2xl:px-0">
+        <div className="w-[90vw] 2xl:w-[70vw] h-[90vh] 2xl:h-[70vh] flex flex-col 2xl:flex-row gap-10 2xl:gap-0 animate-slide-up transition-all duration-300">
           <div className="w-[90vw] 2xl:w-[60vw] flex flex-col items-center text-center 2xl:text-start 2xl:items-start justify-center px-5 xl:px-20">
-            <div className="glass-card p-6 mb-8 animate-slide-left rounded-r-full">
-              <h2 className="text-sm xl:text-lg border-r-3 border-l-3 border-white/60 px-3 py-2 rounded-r-full text-gradient-accent font-semibold tracking-wider uppercase">
+            <div className="glass-card py-2 px-6 mb-5 animate-slide-left rounded-r-full rounded-t-full">
+              <h2 className="text-sm xl:text-md border-r-3 border-white/60 px-3 py-2 rounded-r-full text-gradient-accent font-semibold tracking-wider uppercase">
               Machine Learning and Web Enthusiast
               </h2>
             </div>
-            <h1 className="text-4xl 2xl:text-7xl font-bold text-white mt-2 py-1 gradient-text animate-slide-left">
+            <h1 className="text-4xl 2xl:text-6xl font-bold text-white mt-2 py-1 gradient-text animate-slide-left">
               I&apos;m Inas Samara Taqia
             </h1>
             <p className="text-xl text-color mt-7 max-w-2xl animate-slide-left">
@@ -84,12 +84,12 @@ const LandingPage = () => {
               </a>
             </div>
           </div>
-          <div className="order-first 2xl:order-none w-full 2xl:w-[40vw] h-[500px] 2xl:h-full relative overflow-hidden z-49 animate-slide-right">
-            <div className="glass-card h-full p-8 flex flex-col items-center justify-center relative rounded-t-full overflow-hidden">
+          <div className="order-first 2xl:order-none w-full 2xl:w-[30vw] h-[500px] 2xl:h-[65vh] relative overflow-hidden z-49 animate-slide-right">
+            <div className="glass-card h-full p-8 flex flex-col items-center justify-center relative rounded-t-full rounded-b-4xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-dark opacity-50 rounded-2xl"></div>
               <Image src="/foto.jpg" className="object-cover" sizes="(min-width: 1536px) 40vw, 90vw" priority={false} alt="Profile" fill />
               <div className="relative z-10 text-center">
-                <span className={`${poppins.className} text-white text-[40px] lg:text-[80px] mx-5 font-bold text-gradient-glow`}>Sambatawa</span> 
+                <span className={`${poppins.className} text-white text-[40px] lg:text-[60px] mx-5 font-bold text-gradient-glow`}>Sambatawa</span> 
                 <div className="mt-20 md:mt-60 lg:mt-80 mx-7 px-6 py-3 glass-card rounded-full">
                   <span className="text-white text-xl lg:text-2xl font-medium">Bogor, Indonesia</span>        
                 </div>
@@ -99,7 +99,7 @@ const LandingPage = () => {
         </div>
       </section>   
       <div id="Page2" className="scroll-container flex flex-col h-[80vh] 2xl:h-[80vh] w-full max-w-[80vw] mx-auto my-auto mt-40 mb-10 overflow-y-auto overflow-x-hidden bg-gradient-dark scroll-smooth snap-y snap-mandatory rounded-4xl animate-slide-up duration-300">
-        <section id="About" className="scroll-mt-28 p-10 px-30 w-full max-w-[80vw] mx-auto snap-start flex flex-col gap-8 text-white mb-25">
+        <section id="About" className="scroll-mt-28 p-10 px-50 w-full max-w-[80vw] mx-auto snap-start flex flex-col gap-8 text-white mb-25">
           <div className="text-center mb-16">
             <div className="inline-block">
               <span className="text-sm font-semibold text-gradient-accent uppercase tracking-wider">About Me</span>
@@ -554,10 +554,10 @@ const LandingPage = () => {
             </div>
           </div>
         </section>
-        <section id="Projects" className="scroll-mt-28 p-10 px-30 w-full max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">    
+        <section id="Projects" className="scroll-mt-28 p-10 px-50 w-full max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">    
           <Project />
         </section>
-        <section id="Contact" className="scroll-mt-28 p-10 px-30 w-full max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">
+        <section id="Contact" className="scroll-mt-28 p-10 px-50 w-full max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">
           <Contact />
         </section>
       </div>

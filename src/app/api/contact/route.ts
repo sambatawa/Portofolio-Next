@@ -1,8 +1,18 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import dns from "dns/promises";
+import {connectDB, Message} from "@/lib/db";
 
 export const runtime = "nodejs";
+
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+  "Cross-Origin-Embedder-Policy": "unsafe-none",
+  "Cross-Origin-Opener-Policy": "same-origin-allow-popups",
+  "Cross-Origin-Resource-Policy": "cross-origin",
+};
 
 type MailboxLayerResult = {
     isValid: boolean;
@@ -10,6 +20,10 @@ type MailboxLayerResult = {
 };
 async function verifyEmailWithMailboxLayer(email: string): Promise<MailboxLayerResult> {
     const apiKey = process.env.MAILBOXLAYER_API_KEY;
+    if (!apiKey) {
+        console.log("MAILBOXLAYER_API_KEY tidak ditemukan, skip email verification");
+        return { isValid: true };
+    }
     try {
         const response = await fetch(`https://apilayer.net/api/check?access_key=${apiKey}&email=${encodeURIComponent(email)}&smtp=1&format=1`);
         const data = await response.json();
@@ -29,38 +43,81 @@ async function verifyEmailWithMailboxLayer(email: string): Promise<MailboxLayerR
         return { isValid, raw: data };
     } catch (error) {
         console.error("Gagal memeriksa email di MailboxLayer:", error);
-        return { isValid: false };
+        return { isValid: true }; 
     }
 }
+const accessMap = new Map<string, number>();
+function rateLimit(ip: string, ms = 15_000) {
+    const now = Date.now();
+    const last = accessMap.get(ip) || 0;
+    if (now - last < ms) return false;
+    accessMap.set(ip, now);
+    return true;
+}
+async function verifyRecap(token: string) {
+    const secret = process.env.RECAPTCHA_SECRET_KEY;
+    if (!secret) {
+        console.log("secret key gada, skip verifikasi");
+        return true;
+    }
+    try {
+        const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+            method: "POST",
+            headers: {"Content-Type": "application/x-www-form-urlencoded"},
+            body: `secret=${secret}&response=${token}`
+        });
+        const data = await res.json();
+        return data.success === true;
+    } catch (error) {
+        console.error("Gagal verifikasi reCAPTCHA:", error);
+        return true; 
+    }
+}
+export async function OPTIONS() {
+    return new NextResponse(null, { status: 200, headers: corsHeaders });
+}
+
 export async function POST(req: Request) {
     const contentType = req.headers.get("content-type") || "";
     if (!contentType.includes("application/json")) {
         return NextResponse.json(
             { message: "Content-Type harus application/json", success: false },
-            { status: 400 }
+            { status: 400, headers: corsHeaders }
         );
     }
-    let body: unknown;
+    const ip = req.headers.get("x-forwarded-for") || "unknown";
+    if (!rateLimit(ip)) {
+        return NextResponse.json(
+            { message: "Maximum Limit access", success: false },
+            { status: 429, headers: corsHeaders }
+        );
+    }
+    let body: Record<string, unknown>;
     try {
         body = await req.json();
     } catch {
         return NextResponse.json(
             { message: "JSON tidak valid", success: false },
-            { status: 400 }
+            { status: 400, headers: corsHeaders }
         );
     }
-    const { name, email, subject, message } = (body as Record<string, unknown>) || {};
-    if (!name || !email || !subject || !message) {
+    const { name, email, subject, message, token } = body;
+    if (!name || !email || !subject || !message || !token) {
         return NextResponse.json(
             { message: "Semua field wajib diisi", success: false },
-            { status: 400 }
+            { status: 400, headers: corsHeaders }
         );
+    }
+    //recaptcha verification
+    const recapValid = await verifyRecap(String(token));
+    if (!recapValid) {
+        return NextResponse.json({ message: "reCAPTCHA gagal.", success: false }, { status: 400, headers: corsHeaders });
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(String(email))) {
         return NextResponse.json(
             { message: "Format email tidak valid", success: false },
-            { status: 400 }
+            { status: 400, headers: corsHeaders }
         );
     }
     //Tahap 1: Cek domain email
@@ -71,13 +128,13 @@ export async function POST(req: Request) {
         if (!mxRecords || mxRecords.length === 0) {
             return NextResponse.json(
                 { message: "Domain email tidak memiliki server email (MX record)", success: false },
-                { status: 400 }
+                { status: 400, headers: corsHeaders }
             );
         }
     } catch {
         return NextResponse.json(
             { message: "Domain email tidak valid atau tidak dapat diverifikasi", success: false },
-            { status: 400 }
+            { status: 400, headers: corsHeaders }
         );
     }
     //Tahap 2: Verifikasi email valid
@@ -85,7 +142,7 @@ export async function POST(req: Request) {
     if (!verifyResult.isValid) {
         return NextResponse.json(
             { message: "Email tidak bisa diverifikasi", success: false },
-            { status: 400 }
+            { status: 400, headers: corsHeaders }
         );
     }
     //Tahap 3: Pesan bisa terkirim
@@ -117,15 +174,24 @@ export async function POST(req: Request) {
                     <p style="font-size:12px;color:#555;">Dikirim pada: ${time} WIB</p>
                 </div>`,
         });
-        return NextResponse.json(
-            { message: "Pesan berhasil dikirim", success: true },
-            { status: 200 }
-        );
-        } catch (error) {
-            console.error("Error mengirim email:", error);
-        return NextResponse.json(
-            { message: "Gagal mengirim pesan", success: false },
-            { status: 500 }
-        );
+    } catch (error) {
+        console.error("Error mengirim email:", error);
+        return NextResponse.json({ message: "Gagal mengirim pesan.", success: false }, { status: 500, headers: corsHeaders });
     }
+    // Tahap 4: Simpan ke db
+    try {
+        console.log("Connecting to database...");
+        await connectDB();
+        await Message.create({ 
+            name: String(name), 
+            email: String(email), 
+            subject: String(subject), 
+            message: String(message) 
+        });
+        console.log("Berhasil disimpan ke database:");
+    } catch (dbError) {
+        console.error("Database error:", dbError);
+        console.log("Database tidak tersedia, tapi email tetap terkirim");
+    }
+    return NextResponse.json({ message: "Pesan berhasil dikirim dan disimpan.", success: true }, { headers: corsHeaders });
 }

@@ -11,7 +11,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Sambatawa",
   description: "Hello ini Portofolio Inas Samara Taqia (Sambatawa)",
-
+  other: {
+    'Cross-Origin-Embedder-Policy': 'unsafe-none',
+    'Cross-Origin-Opener-Policy': 'same-origin-allow-popups',
+    'Cross-Origin-Resource-Policy': 'cross-origin',
+  },
 };
 
 export default function RootLayout({
@@ -21,8 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} ${poppins.variable} antialiased`}>
+      <body className={`${poppins.variable} ${poppins.variable} antialiased`}>
         {children}
       </body>
     </html>

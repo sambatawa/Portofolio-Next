@@ -1,13 +1,7 @@
 "use client"
 import { useState, ChangeEvent, FormEvent } from "react";
 import { FaGithub, FaLinkedinIn, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import { Poppins } from "next/font/google";
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-});
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -16,42 +10,53 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   const Change = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
   const Submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
+      if (!captchaToken) {
+        alert("Harap verifikasi reCAPTCHA terlebih dahulu!");
+        return;
+      }
       const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailValid.test(form.email)) {
         alert("Format email tidak valid!");
         return;
       }
-      const response = await fetch("/api/contact/", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(form),
-      });
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+          token: captchaToken
+        })
+      })
       const data = await response.json();
       if (data.success) {
-        alert("Pesan berhasil dikirim!");
-        setForm({ name: "", email: "", subject: "", message: "" });
+        alert("Pesan berhasil dikirim!")
+        setForm({ name: "", email: "", subject: "", message: "" })
+        setCaptchaToken(null)
       } else {
-        alert(`Gagal mengirim pesan: ${data.message}`);
+        alert(`Gagal mengirim pesan: ${data.message}`)
       }
     } catch (err) {
-      console.error("Error:", err);
-      alert("Coba lagi dah");
-    }
-  };
+      console.error("Error:", err)
+      alert("Coba lagi dah")
+    } 
+  }
 
   return (
-    <div className={`${poppins.className} py-20`}>
-      <div className="max-w-7xl mx-auto px-6">
+    <div>
+      <div className="py-20">
         <div className="text-center mb-35">
           <div className="inline-block">
             <span className="text-sm font-semibold text-gradient-accent uppercase tracking-wider">Get In Touch</span>
@@ -64,7 +69,7 @@ const Contact = () => {
         </div>
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
           <div className="space-y-5">
-            <div className="glass-card rounded-tr-full p-8 hover:neon-glow transition-all duration-300">
+            <div className="rounded-tr-full p-8 hover:neon-glow transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
                 <h3 className="text-xl font-bold text-gradient-primary">Contact Information</h3>
@@ -73,35 +78,35 @@ const Contact = () => {
               <p className="mb-6 text-color text-md leading-relaxed">Let&apos;s discuss how we can bring your vision to life.</p>
               <div className="space-y-6 ml-4">
                 <div className="flex items-center gap-4 group cursor-pointer">
-                  <div className="w-10 h-10 bg-gradient-primary rounded-b-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-b-full flex items-center justify-center transition-all duration-300 shadow-lg">
                     <FaMapMarkerAlt className="text-white text-md"/>
                   </div>
-                  <div>
+                  <div className="rounded-r-full px-5 py-1">
                     <span className="font-semibold text-white text-lg block">Location</span>
                     <span className="text-color">Bogor, Indonesia</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group cursor-pointer">
-                  <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow-accent">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center transition-all duration-300 shadow-lg">
                     <FaEnvelope className="text-white text-lg"/>
                   </div>
-                  <div>
+                  <div className="rounded-r-full px-5 py-1">
                     <span className="font-semibold text-white text-lg block">Email</span>
                     <span className="text-color">inassamarataqia@gmail.com</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group cursor-pointer">
-                  <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow">
+                  <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center transition-all duration-300 shadow-lg">
                     <FaPhoneAlt className="text-white text-lg"/>
                   </div>
-                  <div>
+                  <div className="rounded-r-full px-5 py-1">
                     <span className="font-semibold text-white text-lg block">Phone</span>
                     <span className="text-color">+62...</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="glass-card rounded-b-xxl p-8 hover:neon-glow-accent transition-all duration-300">
+            <div className="rounded-b-xxl px-8 py-2 hover:neon-glow-accent transition-all duration-300">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
                 <h3 className="text-xl font-bold text-gradient-primary">Follow Me</h3>
@@ -151,7 +156,10 @@ const Contact = () => {
                 <label className="text-sm font-semibold text-color uppercase tracking-wide">Project Details</label>
                 <textarea className="w-full p-4 glass-button rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 h-32 resize-none hover:bg-white/15" name="message" placeholder="Tell me about your project, timeline, and goals Or your story..." value={form.message} onChange={Change} required />
               </div>
-              <button className="w-full bg-gradient-primary hover:bg-gradient-accent text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 hover:scale-105 hover:neon-glow active:scale-95 relative overflow-hidden group">
+              <div className="pt-2">
+                <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""} onChange={(token: string | null) => setCaptchaToken(token)}/>
+              </div>
+              <button className="w-full bg-gradient-primary hover:bg-gradient-accent text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 hover:scale-105 hover:neon-glow active:scale-95 relative overflow-hidden group" type="submit">
                 <span className="relative z-10">Send Message</span>
                 <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>

@@ -50,7 +50,7 @@ const OrgCert: React.FC = () => {
     <div className="mt-6 px-0 lg:px-20 relative">
       <div className="text-center mb-10">
         <h3 className="text-3xl font-bold text-white mb-5">
-          Creating <span className="text-gradient-accent">Organization and Certificate</span>
+          Experience <span className="text-gradient-accent">Organization and Certificate</span>
         </h3>
         <p className="text-lg text-color max-w-2xl mx-auto">
           Building connections through organizations and continuous learning

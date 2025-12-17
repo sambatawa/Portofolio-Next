@@ -18,7 +18,7 @@ const sections = [
 
 const icons = [
   { link: "https://github.com/sambatawa", label: "sambatawa", icon: Github, newTab: true },
-  { link: "https://www.instagram.com/sambatawa_/profilecard/?igsh=MTdzdmlpZmtsa3BrbQ==", label: "@sambatawa_", icon: Instagram, newTab: true },
+  { link: "https://www.instagram.com/inassamarr", label: "@sambatawa_", icon: Instagram, newTab: true },
   { link: "https://www.linkedin.com/in/inas-samara-taqia", label: "Inas Samara Taqia", icon: Linkedin },
   { link: "mailto:inassamarataqia@gmail.com", label: "Email", icon: Mail },
 ];
@@ -67,15 +67,15 @@ const Navbar = () => {
 
 
   return (
-    <nav className={`fixed m-8 w-[80vw] h-[6vh] ml-0 left-1/2 -translate-x-1/2 px-10 py-4 rounded-full flex items-center justify-between glass-card z-100 transition-all ${animateNavbar? 'animate-slide-up' : 'opacity-0'}`}>        
+    <nav className={`fixed m-8 w-[80vw] h-[6vh] ml-0 left-1/2 -translate-x-1/2 px-5 md:px-8 py-4 rounded-full flex items-center justify-between glass-card z-100 transition-all ${animateNavbar? 'animate-slide-up' : 'opacity-0'}`}>        
       <div className={`${playfair.className} px-4 sm:px-6`}>
           <span className="text-gradient-primary font-bold text-xl">
-              Sambatawa.com
+              sambatawa.tech
           </span>
       </div>       
       <div className="hidden 2xl:flex items-center gap-2">
         {sections.map((section) => (
-          <a key={section.id} href={`#${section.id}`} className={`relative font-medium text-[12px] md:text-md text-color flex items-center justify-center rounded-full px-6 py-2 transition-all duration-300 hover:text-white group ${active === section.id? "glass-button neon-glow": "hover:glass-button"}`}>
+          <a key={section.id} href={`#${section.id}`} className={`relative font-medium text-[15px] text-color flex items-center justify-center rounded-full px-6 py-2 transition-all duration-300 hover:text-white group ${active === section.id? "glass-button neon-glow": "hover:glass-button"}`}>
             {section.label}
             {active === section.id && (
               <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-1 bg-gradient-accent rounded-full"></div>
@@ -102,7 +102,7 @@ const Navbar = () => {
       </div>
       </div>
         {menuOpen && (
-            <div className="absolute top-20 right-0 w-[90vw] bg-black mt-5 backdrop-blur-2xl flex flex-col items-center gap-6 py-12 px-8 rounded-3xl shadow-lg 2xl:hidden z-50 animate-slide-up duration-300">
+          <div className="absolute top-20 right-0 w-[80vw] bg-[#3b67a0] mt-5 backdrop-blur-2xl flex flex-col items-center gap-6 py-12 px-8 rounded-3xl shadow-lg 2xl:hidden z-50 animate-slide-up duration-300">
             {sections.map((section) => (
                 <a onClick={() => setMenuOpen(false)} key={section.id} href={`#${section.id}`}
                 className={`font-medium text-xl text-color py-3 px-8 w-full text-center rounded-full transition-all duration-300 ${active === section.id? "glass-button neon-glow text-white": "hover:glass-button"}`}>

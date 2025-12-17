@@ -19,7 +19,7 @@ const projects = [
     image: "/project/HydroCabin.png",
     title: "HydroCabin",
     line1: "Plant monitoring system based on IoT with parameters of temperature, humidity, and pressure.",
-    demo: "https://hydrocabin-demo.vercel.app",
+    demo: "https://hydrocabin.sambatawa.tech",
     repo: "https://github.com/sambatawa/HydroCabin",
     tools: [
       "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
@@ -32,7 +32,7 @@ const projects = [
     image: "/project/SiPhot.png",
     title: "SiPhot",
     line1: "Web-based photo booth app with gesture control using hand detection.",
-    demo: "https://siphot-demo.vercel.app",
+    demo: "https://siphot-demo.sambatawa.tech",
     repo: "https://github.com/sambatawa/SiPhot",
     tools: [
       "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg",
@@ -41,6 +41,41 @@ const projects = [
       "https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg",
     ],
   },
+  {
+    image: "/project/Terra.png",
+    title: "Terra",
+    line1: "Monitoring dan AI Detection Disease menggunakan Eggplant Leaf - Platform pertanian cerdas dengan teknologi AI, IoT, dan machine learning untuk membantu petani Indonesia.",
+    demo: "https://terra-demo.sambatawa.tech",
+    repo: "https://github.com/sambatawa/Terra",
+    tools: [
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-original.svg",
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg",
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg",
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg",
+    ],
+  },
+  {
+    image: "/project/Nutrimix.png",
+    title: "Nutrimix",
+    line1: "E-commerce and monitoring feature website for fish feed producer with premium formulas for optimal fish growth in aquaculture.",
+    demo: "https://nutrimix-demo.sambatawa.tech",
+    repo: "https://github.com/sambatawa/Nutrimix",
+    tools: [
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg",
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg",
+      "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg",
+    ],
+  },
+  {
+    image: "/project/3D.png",
+    title: "3D Project",
+    line1: "3D modeling and design project created with Fusion 360, featuring complex mechanical components and assembly visualization.",
+    demo: "https://a360.co/4qiXPr4",
+    repo: "",
+    tools: [],
+  },
 ];
 
 const Project = () => {
@@ -48,11 +83,11 @@ const Project = () => {
   const active = projects[activeIndex] ?? projects[0];
 
   return (
-    <div className="relative py-7 h-screen">
+    <div className="relative lg:py-7 min-h-[80vh] flex flex-col justify-center">
       <div className="pointer-events-none absolute -top-10 -left-10 w-56 h-56 bg-cyan-500/20 blur-3xl rounded-full"></div>
       <div className="pointer-events-none absolute bottom-0 right-0 w-72 h-72 bg-purple-500/20 blur-3xl rounded-full"></div>
       <div className="text-left mb-16">
-        <h2 className="text-4xl text-gradient-primary md:text-5xl font-bold text-white mb-2 leading-tight pb-2">Portofolio My Projects</h2>
+        <h2 className="text-3xl text-gradient-primary font-bold text-white mb-2 leading-tight pb-2">Portofolio My Projects</h2>
         <p className="text-lg text-color max-w-2xl">Explore my latest work and innovative solutions that showcase technical expertise and creative problem-solving.</p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
@@ -61,7 +96,7 @@ const Project = () => {
           <div className="absolute -z-20 inset-0 rounded-3xl animate-pulse" />
           <Swiper className="mySwiper w-full max-w-[860px] h-[400px] md:h-[480px]" effect={"cards"} grabCursor={true} modules={[EffectCards, Pagination]} pagination={{ el: ".custom-pagination", clickable: true }} onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}>
             {projects.map((p, i) => (
-              <SwiperSlide className="group relative h-[400px] rounded-3xl bg-cover bg-center shadow-2xl border border-white/20 overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-rotate-[0.5deg] hover:shadow-cyan-500/25" key={i} style={{ backgroundImage: `url(${p.image})` }}>
+              <SwiperSlide className="group relative h-[400px] rounded-3xl bg-cover bg-center shadow-2xl overflow-hidden transition-all duration-500 hover:-rotate-[0.5deg] hover:shadow-cyan-500/25" key={i} style={{ backgroundImage: `url(${p.image})` }}>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                  <div className="absolute inset-0">
@@ -83,11 +118,7 @@ const Project = () => {
                    })}
                  </div>
                  <div className="absolute bottom-6 left-6 right-6 text-white z-10">
-                   <div className="flex items-center gap-2 mb-3">
-                     <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-                     <span className="text-cyan-400 text-sm font-medium">Featured Project</span>
-                   </div>
-                   <h3 className={`text-3xl font-bold drop-shadow-lg leading-tight pb-1 ${playfair.className}`}>{p.title}</h3>
+                   <h3 className={`text-xl font-bold drop-shadow-lg p-4 bg-gradient-to-r from-cyan-500/10 to-[#78dfd985] rounded-t-full rounded-r-full w-fit leading-tight  ${playfair.className}`}>{p.title}</h3>
                  </div>
                 <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute -top-10 -left-10 w-32 h-32 bg-purple-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -105,6 +136,7 @@ const Project = () => {
              <h3 className={`mt-2 text-3xl font-bold leading-tight pb-1 ${playfair.className}`}>{active.title}</h3>
           </div>
           <p className="text-lg text-white/80 leading-relaxed">{active.line1}</p>
+          {active.tools && active.tools.length > 0 && (
           <div>
             <h4 className="text-white/90 font-semibold mb-3">Tech Stack</h4>
             <div className="flex flex-wrap gap-3">
@@ -113,14 +145,17 @@ const Project = () => {
               ))}
             </div>
           </div>
+        )}
 
           <div className="pt-2 flex gap-3 flex-wrap">
             <a href={active.demo ?? "#"} target="_blank" rel="noreferrer" className="px-5 py-3 rounded-full bg-gradient-primary transition-colors font-semibold shadow-lg shadow-cyan-500/20 flex items-center gap-2">
               <FaExternalLinkAlt /> Demo
             </a>
-            <a href={active.repo ?? "#"} target="_blank" rel="noreferrer" className="px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors font-semibold backdrop-blur flex items-center gap-2">
-              <FaGithub /> Code
-            </a>
+            {active.repo && active.repo !== "" && (
+              <a href={active.repo} target="_blank" rel="noreferrer" className="px-5 py-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors font-semibold backdrop-blur flex items-center gap-2">
+                <FaGithub /> Code
+              </a>
+            )}
           </div>
         </div>
       </div>

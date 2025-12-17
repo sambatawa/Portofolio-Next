@@ -1,12 +1,13 @@
 'use client'
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
-import { FaGlobe, FaRobot, FaServer, FaChartBar } from "react-icons/fa";
+import { FaGlobe, FaRobot, FaServer, FaChartBar, FaComments } from "react-icons/fa";
 import { SiPython, SiJavascript, SiNextdotjs, SiReact, SiNodedotjs } from 'react-icons/si';
 import { AiOutlineRobot } from "react-icons/ai";
 import Project from "@/components/Project";
 import Contact from "@/components/Contact";
+import OrgCert from "@/components/OrgCert";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -15,6 +16,37 @@ const poppins = Poppins({
 })
 
 const LandingPage = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const projects = [
+    {
+      image: "/project/HydroCabin.png",
+      title: "HydroCabin",
+      line1: "IoT-based smart hydroponic monitoring and automation system.",
+      demo: "https://hydrocabin.sambatawa.tech",
+      repo: "https://github.com/sambatawa/HydroCabin",
+      tools: [
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg",
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-original.svg",
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg",
+      ],
+    },
+    {
+      image: "/project/SiPhot.png",
+      title: "SiPhot",
+      line1: "Web-based photo booth app with gesture control using hand detection.",
+      demo: "https://siphot-demo.sambatawa.tech",
+      repo: "https://github.com/sambatawa/SiPhot",
+      tools: [
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg",
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg",
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
+        "https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg",
+      ],
+    },
+  ];
+
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -63,7 +95,7 @@ const LandingPage = () => {
         <div className="w-[90vw] 2xl:w-[70vw] h-[90vh] 2xl:h-[70vh] flex flex-col 2xl:flex-row gap-10 2xl:gap-0 animate-slide-up transition-all duration-300">
           <div className="w-[90vw] 2xl:w-[60vw] flex flex-col items-center text-center 2xl:text-start 2xl:items-start justify-center px-5 xl:px-20">
             <div className="glass-card py-2 px-6 mb-5 animate-slide-left rounded-r-full rounded-t-full">
-              <h2 className="text-sm xl:text-md border-r-3 border-white/60 px-3 py-2 rounded-r-full text-gradient-accent font-semibold tracking-wider uppercase">
+              <h2 className="text-sm xl:text-md border-r-2 border-white/60 px-3 py-2 rounded-r-full text-gradient-accent font-semibold tracking-wider uppercase">
               Machine Learning and Web Enthusiast
               </h2>
             </div>
@@ -74,12 +106,12 @@ const LandingPage = () => {
               Building the future of web applications with AI/ML integration and Web3 technologies. 
               Passionate about creating intelligent, decentralized solutions that push the boundaries of what&apos;s possible.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 mt-8 2xl:mt-20 animate-slide-left border-b-2 border-t-1 rounded-3xl border-/60 py-2 px-2">
+            <div className="flex flex-col sm:flex-row gap-6 mt-8 2xl:mt-20 animate-slide-left border-b-2 border-t border-white/60 py-2 px-2 rounded-3xl lg:rounded-full">
               <a href="#Contact" className="group relative px-8 py-4 bg-gradient-primary text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 neon-glow">
                 <div className="relative px-15 z-10">Let&apos;s Collaborate</div>
                 <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
-              <a href="#About" className="glass-button px-8 py-4 text-white font-semibold rounded-full hover:scale-105 transition-all duration-300">
+              <a href="/resume" className="glass-button px-8 py-4 text-white font-semibold rounded-full hover:scale-105 transition-all duration-300">
                 View Resume
               </a>
             </div>
@@ -98,13 +130,13 @@ const LandingPage = () => {
           </div>
         </div>
       </section>   
-      <div id="Page2" className="scroll-container flex flex-col h-[80vh] 2xl:h-[80vh] w-full max-w-[80vw] mx-auto my-auto mt-40 mb-10 overflow-y-auto overflow-x-hidden bg-gradient-dark scroll-smooth snap-y snap-mandatory rounded-4xl animate-slide-up duration-300">
-        <section id="About" className="scroll-mt-28 p-10 px-50 w-full max-w-[80vw] mx-auto snap-start flex flex-col gap-8 text-white mb-25">
-          <div className="text-center mb-16">
+      <div id="Page2" className="scroll-container flex flex-col h-[80vh] 2xl:h-[80vh] w-full max-w-[80vw] mx-auto my-auto mt-40 mb-10 overflow-y-auto overflow-x-hidden bg-gradient-dark scroll-smooth rounded-4xl animate-slide-up duration-300">
+        <section id="About" className="scroll-mt-28 p-10 px-10 lg:px-50 w-full max-w-[80vw] mx-auto flex flex-col gap-8 text-white mb-25">
+          <div className="text-center mb-10 lg:mb-16">
             <div className="inline-block">
               <span className="text-sm font-semibold text-gradient-accent uppercase tracking-wider">About Me</span>
             </div>
-            <h2 className="text-5xl font-bold text-white mt-3 mb-4">
+            <h2 className="text-3xl font-bold text-white mt-3 mb-4">
               Who is 
               <span className="text-gradient-primary"> Sambatawa?</span>
             </h2>
@@ -113,16 +145,16 @@ const LandingPage = () => {
             </div>
           </div>
           
-          <div className="mb-15 animate-fade-in">
-            <p className="text-xl leading-relaxed text-color text-center mx-auto">
+          <div className="mb-5 lg:mb-10 animate-fade-in">
+            <p className="text-lg leading-relaxed text-color text-center mx-auto">
               Hi, I&apos;m Inas Samara Taqia, a passionate developer building the next generation of web applications. 
               I specialize in creating intelligent, responsive interfaces that seamlessly integrate AI/ML capabilities with modern web technologies.
-              My journey spans from frontend development to backend architecture, with a deep focus on how machine learning can revolutionize user experiences and create more intuitive, personalized digital solutions.
+              My journey spans from frontend development to backend architecture, with a deep focus on how machine learning can revolutionize user experiences and create more intuitive, personalized organization and certificate.
             </p>
           </div>
-          <div className="grid grid-rows-1 lg:grid-rows-2 gap-20 w-full">
-            <div className="h-fit pb-30 glass-card rounded-3xl p-8 space-y-6 hover:neon-glow transition-all duration-300">
-              <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-rows-1 lg:grid-rows-2 w-full">
+            <div className="h-fit pb-20 mb-10 glass-card rounded-3xl p-8 space-y-6 hover:neon-glow transition-all duration-300">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-4">
                 <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
@@ -233,7 +265,7 @@ const LandingPage = () => {
                           <g key={label}>
                             <circle className="animate-ping" fill={color} cx={x} cy={y} r="8" opacity="0.3"
                               style={{animationDelay: `${index * 0.3}s`}}/>
-                            <circle className="transition-all duration-300 hover:r-8 hover:stroke-4" fill={color} stroke="white" strokeWidth="2" cx={x} cy={y} r="6"
+                            <circle className="transition-all duration-300 hover:r-2" fill={color} stroke="white" strokeWidth="2" cx={x} cy={y} r="6"
                               filter="url(#glow)"
                               style={{
                                 animationDelay: `${index * 0.3}s`,
@@ -283,281 +315,47 @@ const LandingPage = () => {
                     </svg>
                   </div>
                 </div>
-                <div className="space-y-8 px-20">
+                <div className="space-y-6 px-0 lg:px-20">
                   <div className="text-left">
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
-                        <h3 className="text-xl font-bold text-gradient-primary mb-6">Education</h3>
+                        <h3 className="text-xl font-bold text-gradient-primary">Education</h3>
                       </div>
                     <div className="flex gap-4 group cursor-pointer">
-                      <div className="w-12 h-12 bg-gradient-dark rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:neon-glow">
-                        <FaChartBar className="text-white/60 text-lg"/>
-                      </div>
                       <div className="text-left">
                         <span className="font-semibold text-white text-lg block">Computer Engineering</span>
                         <span className="text-color">IPB University</span>
-                        <span className="text-sm text-gray-400 block">Vocational School Program</span>
+                        <span className="text-sm text-gray-400 block">Vocational School | GPA 3.34 of 4.00 | August 2023 - Present</span>
+                      </div>
+                    </div>
+                    <div className="flex gap-4 group cursor-pointer mt-4">
+                      <div className="text-left">
+                        <span className="font-semibold text-white text-lg block">Science</span>
+                        <span className="text-color">SMAN 6 Kabupaten Tangerang</span>
+                        <span className="text-sm text-gray-400 block">July 2019 - May 2022</span>
                       </div>
                     </div>
                 </div>
-                  <div className="text-left">
+                  <div className="text-left ">
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
-                      <h3 className="text-xl font-bold text-gradient-primary mb-6">Hobby and Interests</h3>
+                      <h3 className="text-xl font-bold text-gradient-primary">Hobby and Interests</h3>
                       </div>
                     <div className="flex flex-wrap gap-3 justify-center">
-                      {["Web3", "AI/ML", "Blockchain", "Music", "Design", "Travel", "Writing", "Reading", "Learn code", "3D Design CAD"].map((interest) => (
+                      {["AI/ML", "Music", "Design", "Travel", "Writing", "Reading", "Learn code", "3D Design CAD"].map((interest) => (
                         <span key={interest} className="px-4 py-2 rounded-full bg-gradient-dark text-white/80 text-sm font-medium hover:scale-105 transition-all duration-300 cursor-pointer"> {interest} </span>))}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="space-y-8">
-              <div className="text-center mb-16">
-                <div className="inline-block">
-                  <span className="text-sm font-semibold text-gradient-accent uppercase tracking-wider">What I Build</span>
-                </div>
-                <h3 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-5">
-                  Creating 
-                  <span className="text-gradient-primary"> Digital Solutions</span>
-                </h3>
-                <p className="text-lg text-color max-w-2xl mx-auto">
-                  Transforming ideas into powerful, scalable applications that drive innovation
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="group relative overflow-hidden rounded-r-full pl-28 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 p-8 hover:from-blue-500/20 hover:via-purple-500/20 hover:to-pink-500/20 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/10">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 animate-pulse"></div>
-                  <div className="absolute inset-0">
-                    {[...Array(15)].map((_, i) => {
-                      const left = (i * 8.7) % 100;
-                      const top = (i * 13.2) % 100;
-                      const delay = (i * 0.4) % 3;
-                      const duration = 2 + (i * 0.15) % 2;
-                      return (
-                        <div
-                          key={i}
-                          className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-pulse"
-                          style={{
-                            left: `${left}%`,
-                            top: `${top}%`,
-                            animationDelay: `${delay}s`,
-                            animationDuration: `${duration}s`
-                          }}
-                        />
-                      );
-                    })}
-                  </div>
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-6 mb-6">
-                      <div className="relative">
-                        <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-blue-500/50">
-                          <FaGlobe className="text-white text-3xl" />
-                        </div>
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-                      </div>
-                      <div>
-                        <h4 className="text-white text-xl font-bold mb-2 group-hover:text-gradient-primary transition-colors duration-300">
-                          Web Applications
-                        </h4>
-                        <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                          <span className="text-blue-400 text-sm font-medium">Full Stack Development</span>
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-color leading-relaxed mb-6">
-                      Modern, responsive web applications built with cutting-edge technologies, 
-                      optimized for performance and user experience.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {['React', 'Next.js', 'TypeScript', 'Tailwind'].map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs font-medium rounded-full border border-blue-500/30">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="group relative overflow-hidden rounded-l-full pl-30 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-red-500/10 p-8 hover:from-purple-500/20 hover:via-pink-500/20 hover:to-red-500/20 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/10">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-red-500/5 animate-pulse"></div>
-                  <div className="absolute inset-0">
-                    {[...Array(15)].map((_, i) => {
-                      const left = (i * 9.1) % 100;
-                      const top = (i * 14.5) % 100;
-                      const delay = (i * 0.5) % 3;
-                      const duration = 2 + (i * 0.2) % 2;
-                      
-                      return (
-                        <div
-                          key={i}
-                          className="absolute w-1 h-1 bg-purple-400/30 rounded-full animate-pulse"
-                          style={{
-                            left: `${left}%`,
-                            top: `${top}%`,
-                            animationDelay: `${delay}s`,
-                            animationDuration: `${duration}s`
-                          }}
-                        />
-                      );
-                    })}
-                  </div>
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-6 mb-6">
-                      <div className="relative">
-                        <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-purple-500/50">
-                          <FaRobot className="text-white text-3xl" />
-                        </div>
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-                      </div>
-                      <div>
-                        <h4 className="text-white text-xl font-bold mb-2 group-hover:text-gradient-accent transition-colors duration-300">
-                          AI Integration
-                        </h4>
-                        <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-                          <span className="text-purple-400 text-sm font-medium">Machine Learning</span>
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-color leading-relaxed mb-6">
-                      Intelligent features powered by machine learning algorithms, 
-                      creating smarter and more intuitive user experiences.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {['TensorFlow', 'Python', 'OpenAI', 'ML Models'].map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs font-medium rounded-full border border-purple-500/30">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="group relative overflow-hidden rounded-r-full pl-28 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 p-8 hover:from-green-500/20 hover:via-emerald-500/20 hover:to-teal-500/20 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-green-500/10">
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 via-emerald-500/5 to-teal-500/5 animate-pulse"></div>
-                  <div className="absolute inset-0">
-                    {[...Array(15)].map((_, i) => {
-                      const left = (i * 10.3) % 100;
-                      const top = (i * 15.8) % 100;
-                      const delay = (i * 0.6) % 3;
-                      const duration = 2 + (i * 0.25) % 2;
-                      
-                      return (
-                        <div
-                          key={i}
-                          className="absolute w-1 h-1 bg-green-400/30 rounded-full animate-pulse"
-                          style={{
-                            left: `${left}%`,
-                            top: `${top}%`,
-                            animationDelay: `${delay}s`,
-                            animationDuration: `${duration}s`
-                          }}
-                        />
-                      );
-                    })}
-                  </div>
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-6 mb-6">
-                      <div className="relative">
-                        <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-green-500/50">
-                          <FaServer className="text-white text-3xl" />
-                        </div>
-                        <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-                      </div>
-                      <div>
-                        <h4 className="text-white text-xl font-bold mb-2 group-hover:text-gradient-secondary transition-colors duration-300">
-                          Backend Systems
-                        </h4>
-                        <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                          <span className="text-green-400 text-sm font-medium">Server Architecture</span>
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-color leading-relaxed mb-6">
-                      Scalable APIs and server architectures designed for high performance, 
-                      reliability, and seamless integration.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {['Node.js', 'Express', 'MongoDB', 'Docker'].map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-green-500/20 text-green-300 text-xs font-medium rounded-full border border-green-500/30">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="group relative overflow-hidden rounded-l-full pl-30 bg-gradient-to-br from-orange-500/10 via-red-500/10 to-pink-500/10 p-8 hover:from-orange-500/20 hover:via-red-500/20 hover:to-pink-500/20 transition-all duration-200 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/10">
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-red-500/5 to-pink-500/5 animate-pulse"></div>
-                  <div className="absolute inset-0">
-                    {[...Array(15)].map((_, i) => {
-                      const left = (i * 11.5) % 100;
-                      const top = (i * 17.2) % 100;
-                      const delay = (i * 0.7) % 3;
-                      const duration = 2 + (i * 0.3) % 2;
-                      
-                      return (
-                        <div
-                          key={i}
-                          className="absolute w-1 h-1 bg-orange-400/30 rounded-full animate-pulse"
-                          style={{
-                            left: `${left}%`,
-                            top: `${top}%`,
-                            animationDelay: `${delay}s`,
-                            animationDuration: `${duration}s`
-                          }}
-                        />
-                      );
-                    })}
-                  </div>
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-6 mb-6">
-                      <div className="relative">
-                        <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-pink-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-orange-500/50">
-                          <FaChartBar className="text-white text-3xl" />
-                        </div>
-                        <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-pink-500 rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-                      </div>
-                      <div>
-                        <h4 className="text-white text-xl font-bold mb-2 group-hover:text-gradient-to-r group-hover:from-orange-400 group-hover:to-pink-400 transition-colors duration-300">
-                          Data Solutions
-                        </h4>
-                        <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
-                          <span className="text-orange-400 text-sm font-medium">Analytics & Visualization</span>
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-color leading-relaxed mb-6">
-                      Advanced data analysis and visualization tools that transform 
-                      complex information into actionable business insights.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {['Python', 'Jupyter'].map((tech) => (
-                        <span key={tech} className="px-3 py-1 bg-orange-500/20 text-orange-300 text-xs font-medium rounded-full border border-orange-500/30">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <OrgCert />
           </div>
         </section>
-        <section id="Projects" className="scroll-mt-28 p-10 px-50 w-full max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">    
+        <section id="Projects" className="scroll-mt-28 p-10 px-10 lg:px-50 w-full max-w-[80vw] mx-auto flex flex-col items-center justify-center text-white">    
           <Project />
         </section>
-        <section id="Contact" className="scroll-mt-28 p-10 px-50 w-full max-w-[80vw] mx-auto snap-start flex flex-col items-center justify-center text-white">
+        <section id="Contact" className="scroll-mt-28 p-10 px-10 lg:px-50 w-full max-w-[80vw] mx-auto flex flex-col items-center justify-center text-white">
           <Contact />
         </section>
       </div>

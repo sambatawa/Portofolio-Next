@@ -57,15 +57,12 @@ const Contact = () => {
   return (
     <div>
       <div className="py-20">
-        <div className="text-center mb-35">
-          <div className="inline-block">
-            <span className="text-sm font-semibold text-gradient-accent uppercase tracking-wider">Get In Touch</span>
-          </div>
-          <h2 className="text-2xl grid grid-cols-1 md:text-6xl font-bold text-white mt-2 mb-4 leading-tight pb-2">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Let&apos;s Build Something
-            <span className="text-gradient-primary">Amazing Together</span>
+            <span className="text-gradient-primary"> Amazing Together</span>
           </h2>
-          <p className="text-lg text-color max-w-3xl mx-auto leading-relaxed"> Ready to turn your ideas into reality? I&apos;m here to help you create exceptional digital experiences.</p>
+          <p className="text-color max-w-lg mx-auto">Ready to turn your ideas into reality? Let&apos;s create exceptional digital experiences.</p>
         </div>
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
           <div className="space-y-5">

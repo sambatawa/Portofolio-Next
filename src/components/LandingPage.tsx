@@ -153,7 +153,7 @@ const LandingPage = () => {
             </p>
           </div>
           <div className="grid grid-rows-1 lg:grid-rows-2 w-full">
-            <div className="h-fit pb-20 mb-10 glass-card rounded-3xl p-8 space-y-6 hover:neon-glow transition-all duration-300">
+            <div className="h-fit pb-20 mb-6 glass-card rounded-3xl p-8 space-y-6 hover:neon-glow transition-all duration-300">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-4">
                 <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">

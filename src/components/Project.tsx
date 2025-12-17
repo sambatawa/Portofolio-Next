@@ -83,7 +83,7 @@ const Project = () => {
   const active = projects[activeIndex] ?? projects[0];
 
   return (
-    <div className="relative lg:py-7 min-h-[80vh] flex flex-col justify-center">
+    <div className="relative py-10 min-h-[80vh] mb-6 flex flex-col justify-center">
       <div className="pointer-events-none absolute -top-10 -left-10 w-56 h-56 bg-cyan-500/20 blur-3xl rounded-full"></div>
       <div className="pointer-events-none absolute bottom-0 right-0 w-72 h-72 bg-purple-500/20 blur-3xl rounded-full"></div>
       <div className="text-left mb-16">

@@ -47,8 +47,8 @@ const OrgCert: React.FC = () => {
   ];
 
   return (
-    <div className="mt-6 px-0 lg:px-20 relative">
-      <div className="text-center mb-10">
+    <div className="px-0 lg:px-20 relative">
+      <div className="text-center mb-6">
         <h3 className="text-3xl font-bold text-white mb-5">
           Experience <span className="text-gradient-accent">Organization and Certificate</span>
         </h3>

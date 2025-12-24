@@ -1,9 +1,9 @@
 import Image from "next/image";
 import bg from "../../public/bg2.png";
-import LandingPage from "@/components/LandingPage";
-import CustomCursor from "@/components/CustomCursor";
-import Navbar from "@/components/Navbar";
-import FloatingChatbot from "@/components/FloatingChatbot";
+import LandingPage from "../components/LandingPage";
+import CustomCursor from "../components/CustomCursor";
+import Navbar from "../components/Navbar";
+import FloatingChatbot from "../components/FloatingChatbot";
 
 export default function Home() {
   return (

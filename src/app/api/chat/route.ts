@@ -3,20 +3,46 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const SYSTEM_PROMPT = `You are Sambatawa AI, a personal AI assistant for Inas Samara Taqia (also known as Sambatawa). You are helping visitors learn about her skills, projects, and collaboration opportunities.
 
+IMPORTANT LANGUAGE RULES:
+- Always follow proper grammar and language rules
+- For English: Use formal but cheerful and enthusiastic tone with correct spelling, punctuation, and sentence structure - be professional yet approachable and positive
+- For Indonesian: Use semi-formal, friendly, and cheerful tone with proper EYD spelling - be conversational and approachable, like talking to a friend
+- Avoid overly formal language, but maintain clarity and professionalism
+- Use proper paragraph structure and formatting
+- Ensure all responses are grammatically correct and well-formed
+
 About Inas Samara Taqia:
 - Name: Inas Samara Taqia (Sambatawa)
 - Age: 21 years old
-- Email: inassamarataqia@gmail.com
+- Email: inassaqia@gmail.com
 - Location: Bogor, Indonesia
 - Education: Computer Engineering student at IPB University (Vocational School Program)
 - Status: Available for collaboration and projects
 
-Technical Skills:
+Skills:
 - Frontend: React, Next.js, TypeScript, JavaScript, HTML/CSS
-- Backend: Node.js, Python
-- AI/ML: Machine Learning, Natural Language Processing, Computer Vision
-- Web3: Blockchain, Smart Contracts, Decentralized Applications
-- Tools: Git, REST APIs
+- Backend: Node.js, Python, PHP
+- AI/ML: Machine Learning, Natural Language Processing, Computer Vision, YOLOv8
+- 3D Design: Fusion 360
+- Tools: Git, REST APIs, Fast APIs, Laravel
+
+Strengths:
+- Detail-oriented and perfectionist approach to coding
+- Strong problem-solving abilities in technical challenges
+- Self-motivated learner with passion for new technologies
+- Creative thinking for innovative solutions
+- Dedicated and committed to project completion
+- Excellent at independent work and deep focus
+- Good time management skills and ability to meet deadlines
+- Strong self-awareness and understanding of personal work patterns
+
+Weaknesses & How I Handle Them:
+- Less confident in social situations: Sometimes I feel a bit awkward in new social environments. But I'm actively working on this by seeking collaboration opportunities and joining tech communities. This helps me build confidence step by step!
+- Direct communication challenges: I know communication is key. To overcome this, I practice written communication to be clearer and more concise. I'm also continuously improving my verbal skills through regular interactions.
+- Perfectionism can slow progress: I tend to want everything perfect, which sometimes slows down work. Now I'm learning to balance quality with deadlines. I try to set realistic targets and focus on gradual improvement.
+- Short memory/forgetfulness: Well, sometimes things slip my mind! But I can handle this! I always use documentation tools, create detailed notes, set reminders, and keep my work system organized to track important information and deadlines.
+
+I see these weaknesses as areas for learning and growth. I believe with awareness and effort, everything can be overcome!
 
 Project Experience:
 - AI chatbots and conversational interfaces
@@ -76,18 +102,28 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ response: fallbackResponse });
     }
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     const prompt = `${SYSTEM_PROMPT}\n\nUser: ${message}\n\nResponse:`;
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
-    const text = response.text();
+    let text = response.text();
 
     if (!text) {
       throw new Error('Gemini API returned empty response');
     }
 
-    return NextResponse.json({ response: text.trim() });
+    text = text
+      .replace(/\*\*(.*?)\*\*/g, '$1')
+      .replace(/\*(.*?)\*/g, '$1')
+      .replace(/^- (.*$)/gim, '$1')
+      .replace(/^\* (.*$)/gim, '$1')
+      .replace(/^\d+\. (.*$)/gim, '$1')
+      .replace(/\*/g, '')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+
+    return NextResponse.json({ response: text });
 
   } catch (error) {
     console.error('Chat API Error:', error);
@@ -118,15 +154,10 @@ function generateFallbackResponse(message: string): string {
     return 'You can reach me at inassamarataqia@gmail.com. I\'m also available through the contact form on this portfolio. I typically respond within 24 hours and I\'m excited to discuss potential collaborations!';
   }
   
-  if (lowerCaseMessage.includes('web3') || lowerCaseMessage.includes('blockchain') || lowerCaseMessage.includes('decentralized')) {
-    return 'I have experience with Web3 technologies including smart contracts, decentralized applications, and blockchain integration. I believe in the future of decentralized systems and enjoy building solutions that leverage blockchain for transparency and security.';
-  }
-  
   if (lowerCaseMessage.includes('ai') || lowerCaseMessage.includes('machine learning') || lowerCaseMessage.includes('ml')) {
     return 'AI/ML is my passion! I\'ve worked on various machine learning projects, from predictive models to natural language processing. I love integrating AI capabilities into web applications to create more intelligent and personalized user experiences.';
   }
   
-  // Default responses
   const defaultResponses = [
     'That\'s interesting! While I focus on web development and AI/ML, I\'d be happy to discuss how my skills might apply to what you\'re asking about. Is there something specific you\'d like to know about my projects or collaboration opportunities?',
     'Great question! My expertise lies in React, Next.js, Python, and AI development. If you\'d like to know more about how I can help with your project, feel free to ask about my skills or past work!',

@@ -2,6 +2,7 @@
 
 html {
   scroll-behavior: smooth;
+  overscroll-behavior: none;
 }
 .scroll-container {
   scroll-behavior: smooth;
@@ -11,9 +12,6 @@ html {
 @layer utilities {
   .bg-gradient-primary {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  }
-  .bg-gradient-secondary {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   }
   .bg-gradient-accent {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
@@ -44,17 +42,17 @@ html {
     -webkit-text-fill-color: transparent;
   }
   .text-gradient-glow {
-    background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.5));
-  }
-  .neon-glow {
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.3), 0 0 40px rgba(102, 126, 234, 0.2), 0 0 60px rgba(102, 126, 234, 0.1);
+  background: linear-gradient(135deg, #4ecdc4 0%, #669bea 50%, #45b7d1 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease infinite;
+  display: inline-block;
+  filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.5));
   }
   .neon-glow-accent {
-    box-shadow: 0 0 20px rgba(79, 172, 254, 0.5), 0 0 40px rgba(79, 172, 254, 0.3), 0 0 60px rgba(79, 172, 254, 0.1);
+    box-shadow: 0 0 5px rgba(79, 172, 254, 0.4), 0 0 40px rgba(79, 172, 254, 0.2), 0 0 60px rgba(79, 172, 254, 0.3);
   }
   .glass-card {
     background: rgba(255, 255, 255, 0.05);

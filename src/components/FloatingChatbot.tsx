@@ -15,10 +15,10 @@ const FloatingChatbot = () => {
       {isOpen && (
         <div className="absolute bottom-16 right-0 h-auto w-120 max-w-[90vw] animate-slideUp">
           <div className="relative">
-            <button onClick={toggleChat} className="absolute -top-10 left-0 bg-gradient-to-r from-[#8486dd] to-[#6366f1] text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform duration-200">
+            <button onClick={toggleChat} className="absolute -top-10 left-0 bg-gradient-to-r from-[#8486dd] to-[#6366f1] text-white p-3 rounded-full shadow-lg hover:scale-102 transition-transform duration-200">
               <FaTimes className="text-sm" />
             </button>
-            <div className="bg-black/40 backdrop-blur-md rounded-2xl shadow-2xl shadow-[#8486dd]/20 border border-[#8486dd]/20">
+            <div className="bg-black/60 backdrop-blur-md rounded-2xl shadow-2xl shadow-[#8486dd]/20 border border-[#8486dd]/20">
               <Chatbot />
             </div>
           </div>

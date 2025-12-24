@@ -91,18 +91,18 @@ const Navbar = () => {
             </a>
           ))}
       </div>
-      <div className="glass-button px-6 py-2 rounded-full flex items-center justify-center hover:neon-glow transition-all duration-300 group">
-        <span className="hidden 2xl:flex text-gradient-accent font-semibold text-md hover:text-white transition hover:neon-glow">Connect</span>
+      <a href="#Contact" className="glass-button px-6 py-2 rounded-full flex items-center justify-center hover:neon-glow transition-all duration-300 group">
+        <span  className="hidden 2xl:flex text-gradient-dark font-semibold text-md hover:text-white transition hover:neon-glow">Connect</span>
         <MdConnectWithoutContact size={24} className="2xl:hidden text-gradient-accent group-hover:text-white transition-colors"/>
-      </div> 
+      </a> 
       <div className="2xl:hidden">
-        <button onClick={() => setMenuOpen(!menuOpen)} className="glass-button p-3 rounded-full text-color hover:text-white transition-all duration-300">
+        <button onClick={() => setMenuOpen(!menuOpen)} className="p-2 rounded-full text-color hover:text-white transition-all duration-300">
           {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
         </button>
       </div>
       </div>
         {menuOpen && (
-          <div className="absolute top-20 right-0 w-[80vw] bg-[#3b67a0] mt-5 backdrop-blur-2xl flex flex-col items-center gap-6 py-12 px-8 rounded-3xl shadow-lg 2xl:hidden z-50 animate-slide-up duration-300">
+          <div className="absolute top-20 right-0 w-[80vw] bg-[#3b5ba0da] mt-5 backdrop-blur flex flex-col items-center gap-6 py-12 px-8 rounded-3xl shadow-lg 2xl:hidden z-50 animate-slide-up duration-300">
             {sections.map((section) => (
                 <a onClick={() => setMenuOpen(false)} key={section.id} href={`#${section.id}`}
                 className={`font-medium text-xl text-color py-3 px-8 w-full text-center rounded-full transition-all duration-300 ${active === section.id? "glass-button neon-glow text-white": "hover:glass-button"}`}>

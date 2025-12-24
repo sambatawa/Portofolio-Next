@@ -89,16 +89,16 @@ const Contact = () => {
                   </div>
                   <div className="rounded-r-full px-5 py-1">
                     <span className="font-semibold text-white text-lg block">Email</span>
-                    <span className="text-color">inassamarataqia@gmail.com</span>
+                    <span className="text-color">inasst@sambatawa.tech</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 group cursor-pointer">
                   <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center transition-all duration-300 shadow-lg">
-                    <FaPhoneAlt className="text-white text-lg"/>
+                    <FaEnvelope className="text-white text-lg"/>
                   </div>
                   <div className="rounded-r-full px-5 py-1">
-                    <span className="font-semibold text-white text-lg block">Phone</span>
-                    <span className="text-color">+62...</span>
+                    <span className="font-semibold text-white text-lg block">Email 2</span>
+                    <span className="text-color">inassaqia@gmail.com</span>
                   </div>
                 </div>
               </div>
@@ -117,7 +117,7 @@ const Contact = () => {
                   <FaLinkedinIn className="text-2xl text-color group-hover:text-white mx-auto mb-1 transition-colors"/>
                   <span className="text-sm text-color group-hover:text-white font-medium">LinkedIn</span>
                 </a>
-                <a href="https://www.instagram.com/sambatawa_/" className="group glass-button rounded-br-4xl p-3 text-center transition-all duration-300 hover:scale-105 hover:neon-glow" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/inassamarr" className="group glass-button rounded-br-4xl p-3 text-center transition-all duration-300 hover:scale-105 hover:neon-glow" target="_blank" rel="noopener noreferrer">
                   <FaInstagram className="text-2xl text-color group-hover:text-white mx-auto mb-1 transition-colors"/>
                   <span className="text-sm text-color group-hover:text-white font-medium">Instagram</span>
                 </a>
@@ -142,11 +142,11 @@ const Contact = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-color uppercase tracking-wide">Project Type</label>
-                <select className="w-full p-4 glass-button rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:bg-white/15" name="subject" value={form.subject} onChange={Change} required>
-                  <option value="" className="bg-gray-800 hidden">Select project type</option>
-                  <option value="Collab" className="bg-gray-800">Collaboration</option>
-                  <option value="Work" className="bg-gray-800">Work Opportunity</option>
-                  <option value="Personal" className="bg-gray-800">Personal Project</option>
+                <select className="w-full p-4 glass-button rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 hover:bg-white/15 hover:neon-glow-accent cursor-pointer" name="subject" value={form.subject} onChange={Change} required>
+                  <option value="" className="bg-gray-800 hidden">Project type</option>
+                  <option value="Collab" className="bg-gray-700 text-white hover:bg-gray-600 hover:neon-glow-accent">Collaboration</option>
+                  <option value="Work" className="bg-gray-700 text-white hover:bg-gray-600 hover:neon-glow-accent">Work Opportunity</option>
+                  <option value="Personal" className="bg-gray-700 text-white hover:bg-gray-600 hover:neon-glow-accent">Personal Project</option>
                 </select>
               </div>
               <div className="space-y-2">
@@ -156,7 +156,7 @@ const Contact = () => {
               <div className="pt-2">
                 <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""} onChange={(token: string | null) => setCaptchaToken(token)}/>
               </div>
-              <button className="w-full bg-gradient-primary hover:bg-gradient-accent text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 hover:scale-105 hover:neon-glow active:scale-95 relative overflow-hidden group" type="submit">
+              <button className="w-full bg-gradient-primary hover:bg-gradient-accent text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 hover:neon-glow active:scale-95 relative overflow-hidden group" type="submit">
                 <span className="relative z-10">Send Message</span>
                 <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>

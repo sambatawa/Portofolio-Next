@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
-import { SiPython, SiJavascript, SiNextdotjs, SiReact} from 'react-icons/si';
+import { SiPython, SiJavascript, SiNextdotjs, SiReact, SiLaravel, SiMysql, SiFirebase, SiHtml5, SiCss3, SiTailwindcss, SiTensorflow, SiTypescript, SiMongodb, SiFlask } from 'react-icons/si';
 import { AiOutlineRobot } from "react-icons/ai";
 import Project from "@/components/Project";
 import Contact from "@/components/Contact";
@@ -147,7 +147,7 @@ const LandingPage = () => {
               <span className="text-gradient-primary"> Sambatawa?</span>
             </h2>
             <div className="glass-card rounded-b-3xl p-4 inline-block">
-              <p className="text-md text-gradient-accent font-medium">inassaqia@gmail.com | 21 years old</p>
+              <p className="text-md text-gradient-accent font-medium">inasst@sambatawa.tech | 21 years old</p>
             </div>
           </div>
           
@@ -166,152 +166,51 @@ const LandingPage = () => {
                   <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
                   <h3 className="text-xl font-bold text-gradient-primary">Technical Skills</h3>
                 </div>
-                  <div className="relative h-full w-full bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-6 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 animate-pulse"></div>  
-                    <div className="absolute inset-0">
-                      {[...Array(20)].map((_, i) => {
-                        const left = (i * 7.3) % 100;
-                        const top = (i * 11.7) % 100;
-                        const delay = (i * 0.3) % 3;
-                        const duration = 2 + (i * 0.1) % 2;
-                        
-                        return (
-                          <div className="absolute w-1 h-1 bg-white/20 rounded-full animate-pulse" key={i}
-                            style={{
-                              left: `${left}%`,
-                              top: `${top}%`,
-                              animationDelay: `${delay}s`,
-                              animationDuration: `${duration}s`
-                            }} />
-                        );
-                      })}
-                    </div>
-                    <svg className="w-full h-full relative z-10" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid meet">
-                      <defs>
-                        <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="#f59e0b" />
-                          <stop offset="20%" stopColor="#eab308" />
-                          <stop offset="40%" stopColor="#6b7280" />
-                          <stop offset="60%" stopColor="#06b6d4" />
-                          <stop offset="80%" stopColor="#10b981" />
-                          <stop offset="100%" stopColor="#8b5cf6" />
-                        </linearGradient>
-                        <filter id="glow">
-                          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                          <feMerge> 
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                          </feMerge>
-                        </filter>
-                      </defs>
-                      <g opacity="0.3">
-                        {[0, 25, 50, 75, 100].map((value, i) => (
-                          <g key={value}>
-                            <line className="animate-pulse"
-                              x1="50" y1={200 - (value * 1.5)} 
-                              x2="350" y2={200 - (value * 1.5)} 
-                              stroke="url(#chartGradient)" 
-                              strokeWidth="1"
-                              strokeDasharray="5,5"
-                              style={{animationDelay: `${i * 0.2}s`}} />
-                            <text className="font-semibold"
-                              x="45" y={205 - (value * 1.5)} 
-                              fill="rgba(255,255,255,0.7)" 
-                              fontSize="12" 
-                              textAnchor="end" >
-                              {value}%
-                            </text>
-                          </g>
+                  <div className="relative h-full w-full rounded-3xl p-6 overflow-hidden">
+                    <div className="relative h-full flex items-center justify-center">
+                      <div className="grid grid-cols-3 md:grid-cols-5 gap-4 md:gap-6 w-full h-full">
+                        {[
+                          { name: 'React', icon: <SiReact />, color: '#61DAFB', delay: 0 },
+                          { name: 'Next.js', icon: <SiNextdotjs />, color: '#000000', delay: 0.3 },
+                          { name: 'TypeScript', icon: <SiTypescript />, color: '#3178C6', delay: 0.6 },
+                          { name: 'Tailwind', icon: <SiTailwindcss />, color: '#06B6D4', delay: 0.9 },
+                          { name: 'Python', icon: <SiPython />, color: '#3776AB', delay: 1.2 },
+                          { name: 'JavaScript', icon: <SiJavascript />, color: '#F7DF1E', delay: 1.5 },
+                          { name: 'YOLO', icon: <AiOutlineRobot />, color: '#FF6B35', delay: 1.8 },
+                          { name: 'Laravel', icon: <SiLaravel />, color: '#FF2D20', delay: 2.1 },
+                          { name: 'MySQL', icon: <SiMysql />, color: '#4479A1', delay: 2.4 },
+                          { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248', delay: 2.7 },
+                          { name: 'Firebase', icon: <SiFirebase />, color: '#FFCA28', delay: 3.0 },
+                          { name: 'HTML5', icon: <SiHtml5 />, color: '#E34F26', delay: 3.3 },
+                          { name: 'CSS3', icon: <SiCss3 />, color: '#1572B6', delay: 3.6 },
+                          { name: 'TensorFlow', icon: <SiTensorflow />, color: '#FF6F00', delay: 3.9 },
+                          { name: 'Flask', icon: <SiFlask />, color: '#000000', delay: 4.2 }
+                        ].map((framework, index) => (
+                          <div key={framework.name} className="flex flex-col items-center justify-center" style={{
+                              animation: `slideInFromBottom 0.8s ease-out forwards`,
+                              animationDelay: `${framework.delay}s`,
+                              opacity: 0
+                            }}>
+                            <div className="relative group cursor-pointer transition-all duration-300 hover:scale-110" style={{animation: `bounce ${2 + index * 0.2}s ease-in-out infinite`, animationDelay: `${framework.delay + 0.5}s`}}>
+                              <div className="w-12 h-12 rounded-full flex items-center justify-center text-lg transition-all duration-300" style={{ backgroundColor: `${framework.color}20`, border: `2px solid ${framework.color}`, boxShadow: `0 0 20px ${framework.color}40` }}>
+                                <span style={{ color: framework.color }}>
+                                  {framework.icon}
+                                </span>
+                              </div> 
+                              <div className="absolute inset-0 rounded-full border-2" style={{ borderColor: framework.color, animation: `pulse-ring ${2 + index * 0.3}s ease-out infinite`, animationDelay: `${framework.delay}s` }} />
+                            </div>
+                            
+                            <div className="mt-2 text-center">
+                              <p className="text-white font-semibold text-xs">{framework.name}</p>
+                            </div>
+
+                            {[...Array(2)].map((_, i) => (
+                              <div key={i} className="absolute w-2 h-2 rounded-full" style={{backgroundColor: framework.color, left: '50%', top: '20%', animation: `orbit-${i} ${2 + i}s linear infinite`, animationDelay: `${framework.delay + i * 0.5}s`}} />
+                            ))}
+                          </div>
                         ))}
-                      </g>
-                      
-                      {[
-                        { label: 'Python', x: 100, color: '#f59e0b', icon: <SiPython /> },
-                        { label: 'JS',     x: 160, color: '#eab308', icon: <SiJavascript /> },
-                        { label: 'Next',   x: 220, color: '#6b7280', icon: <SiNextdotjs />},
-                        { label: 'React',  x: 280, color: '#06b6d4', icon: <SiReact /> },
-                        { label: 'AI/ML',     x: 340, color: '#8b5cf6', icon: <AiOutlineRobot /> },
-                      ].map(({label, x, icon}) => (
-                        <g key={label}>
-                          <text className="font-medium text-white text-sm" fill="rgba(255,255,255,0.8)" x={x} y="240" textAnchor="middle" >
-                            {icon}
-                          </text>
-                          <text className="font-medium text-[10px]" fill="rgba(255,255,255,0.6)" x={x} y="255" textAnchor="middle" >
-                            {label}
-                          </text>
-                        </g>
-                      ))}
-                      
-                      <path
-                        fill="none"
-                        stroke="url(#chartGradient)"
-                        strokeWidth="4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        filter="url(#glow)"
-                        className="animate-pulse"
-                        style={{
-                          strokeDasharray: "1000",
-                          strokeDashoffset: "1000",
-                          animation: "drawLine 3s ease-in-out forwards"
-                        }}
-                      />
-                      {[
-                        { label: 'Python', persen: 85, x: 100, color: '#f59e0a' },
-                        { label: 'JavaScript', persen: 80, x: 160, color: '#eab308' },
-                        { label: 'Next.js', persen: 75, x: 220, color: '#6b7280' },
-                        { label: 'React', persen: 70, x: 280, color: '#06b6d4' },
-                        { label: 'AI/ML', persen: 60, x: 340, color: '#8b5cf6' },
-                      ].map(({label, persen, x, color}, index) => {
-                        const y = 200 - (persen * 1.5);
-                        return (
-                          <g key={label}>
-                            <circle className="transition-all duration-300 hover:r-2" fill={color} stroke="white" strokeWidth="2" cx={x} cy={y} r="6"
-                              filter="url(#glow)"
-                              style={{
-                                animationDelay: `${index * 0.3}s`,
-                                animation: "bounceIn 0.6s ease-out forwards"
-                              }}/>
-                            <text className="drop-shadow-lg font-bold text-sm" fill={color} textAnchor="middle" x={x} y={y - 15} 
-                              style={{
-                                animationDelay: `${index * 0.3}s`,
-                                animation: "fadeInUp 0.8s ease-out forwards"
-                              }}>
-                              {persen}%
-                            </text>
-                            {index < 4 && (
-                              <line x1={x} y1={y} 
-                                x2={[
-                                  { x: 100, y: 200 - (85 * 1.5) },
-                                  { x: 160, y: 200 - (80 * 1.5) },
-                                  { x: 220, y: 200 - (75 * 1.5) },
-                                  { x: 280, y: 200 - (70 * 1.5) },
-                                  { x: 340, y: 200 - (60 * 1.5) },
-                                ][index + 1].x} 
-                                y2={[
-                                  { x: 100, y: 200 - (85 * 1.5) },
-                                  { x: 160, y: 200 - (80 * 1.5) },
-                                  { x: 220, y: 200 - (75 * 1.5) },
-                                  { x: 280, y: 200 - (70 * 1.5) },
-                                  { x: 340, y: 200 - (60 * 1.5) },
-                                ][index + 1].y}
-                                stroke={color} 
-                                strokeWidth="3" 
-                                strokeLinecap="round"
-                                filter="url(#glow)"
-                                className="transition-all duration-500"
-                                style={{
-                                  strokeDasharray: "100",
-                                  strokeDashoffset: "100",
-                                  animationDelay: `${index * 0.2}s`,
-                                  animation: "drawLine 1s ease-out forwards"
-                                }}
-                              />
-                            )}
-                          </g>
-                        );
-                      })}
-                    </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="space-y-6 px-0 lg:px-20">
@@ -341,7 +240,7 @@ const LandingPage = () => {
                       <h3 className="text-xl font-bold text-gradient-primary">Hobby and Interests</h3>
                       </div>
                     <div className="flex flex-wrap gap-3 justify-center">
-                      {["AI/ML", "Music", "Design", "Travel", "Writing", "Reading", "Learn code", "3D Design CAD"].map((interest) => (
+                      {["AI/ML", "Design", "Writing", "Reading", "Learn code", "3D Design CAD"].map((interest) => (
                         <span key={interest} className="px-4 py-2 rounded-full bg-gradient-dark text-white/80 text-sm font-medium hover:scale-105 transition-all duration-300 cursor-pointer"> {interest} </span>))}
                     </div>
                   </div>

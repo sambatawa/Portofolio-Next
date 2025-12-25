@@ -26,7 +26,7 @@ const FullCurriculumVitae: React.FC = () => {
                 <span>|</span>
                 <span>082211511345</span>
                 <span>|</span>
-                <a href="mailto:inassamara@email.com" className="underline">inassaqia@email.com</a>
+                <a href="mailto:inasst@sambatawa.tech" className="underline">inasst@sambatawa.tech</a>
                 <span>|</span>
                 <a href="#" className="underline">linkedin.com/in/inas-samara-taqia</a>
                 <span>|</span>

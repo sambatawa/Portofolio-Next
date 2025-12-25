@@ -28,7 +28,7 @@ const FullCurriculumVitae: React.FC = () => {
                 <span>|</span>
                 <a href="#" className="underline">linkedin.com/in/inas-samara-taqia</a>
                 <span>|</span>
-                <span>@inassamara</span>
+                <span>@inassamarr</span>
                 <span>|</span>
                 <a href="#" className="underline">github.com/sambatawa/</a>
               </div>

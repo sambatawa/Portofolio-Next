@@ -102,7 +102,7 @@ const Navbar = () => {
       </div>
       </div>
         {menuOpen && (
-          <div className="absolute top-5 md:top-8 right-0 w-[90vw] bg-[#1b236d] mt-5 flex flex-col items-center gap-6 py-12 px-8 rounded-3xl shadow-lg 2xl:hidden z-50 animate-slide-up duration-300">
+          <div className="absolute top-10 md:top-15 right-0 w-[90vw] bg-[#1b236d] mt-5 flex flex-col items-center gap-6 py-12 px-8 rounded-3xl shadow-lg 2xl:hidden z-50 animate-slide-up duration-300">
             {sections.map((section) => (
                 <a onClick={() => setMenuOpen(false)} key={section.id} href={`#${section.id}`}
                 className={`font-medium text-sm lg:text-xl text-color py-2 px-8 w-full text-center rounded-full transition-all duration-300 ${active === section.id? "glass-button neon-glow text-white": "hover:glass-button"}`}>

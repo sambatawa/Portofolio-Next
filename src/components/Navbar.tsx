@@ -20,7 +20,7 @@ const icons = [
   { link: "https://github.com/sambatawa", label: "sambatawa", icon: Github, newTab: true },
   { link: "https://www.instagram.com/inassamarr", label: "@sambatawa_", icon: Instagram, newTab: true },
   { link: "https://www.linkedin.com/in/inas-samara-taqia", label: "Inas Samara Taqia", icon: Linkedin },
-  { link: "mailto:inassamarataqia@gmail.com", label: "Email", icon: Mail },
+  { link: "mailto:inasst@sambatawa.tech", label: "Email", icon: Mail },
 ];
 
 const Navbar = () => {

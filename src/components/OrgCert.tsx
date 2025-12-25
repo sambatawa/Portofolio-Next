@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import { FaGlobe, FaAward } from "react-icons/fa";
+import {FaAward } from "react-icons/fa";
 
 interface BaseItem {
   id: string;
@@ -48,33 +48,33 @@ const OrgCert: React.FC = () => {
 
   return (
     <div className="px-0 mt-20 lg:mt-0 relative">
-      <div className="text-center mb-6">
-        <h3 className="text-3xl font-bold text-white mb-5">
+      <div className="text-center">
+        <h3 className="text-xl xl:text-3xl font-bold text-white mb-5">
           Experience <span className="text-gradient-accent">Organization and Certificate</span>
         </h3>
-        <p className="text-lg text-color max-w-2xl mx-auto">
+        <p className="text-sm xl:text-lg text-color max-w-2xl mb-10 mx-auto">
           Building connections through organizations and continuous learning
         </p>
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <section className="glass-card rounded-3xl p-8 hover:neon-glow transition-all duration-300">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
-            <h4 className="text-xl font-bold text-gradient-primary">Organizations</h4>
+        <section className="glass-card rounded-3xl px-5 py-8 hover:neon-glow transition-all duration-300">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-2 lg:h-8 h-4 bg-gradient-accent rounded-full"></div>
+            <h4 className="text-lg lg:text-xl font-bold text-gradient-primary">Organizations</h4>
           </div>
           
           <div className="space-y-6">
             {organizations.map((org) => (
               <div key={org.id} className="group">
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-gradient-dark/50 hover:bg-gradient-dark/70 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0">
-                    <FaGlobe className="text-white text-lg"/>
+                <div className="flex items-start gap-3 lg:gap-4 p-3 lg:p-4 rounded-2xl bg-gradient-dark/50 hover:bg-gradient-dark/70 transition-all duration-300">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-primary rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0">
+                    <div className="bg-white w-5 h-5 rounded-full flex items-center justify-center"></div>
                   </div>
                   <div className="flex-1">
-                    <h5 className="font-semibold text-white text-lg mb-1">{org.title}</h5>
-                    <p className="text-color text-sm mb-2">{org.subtitle}</p>
-                    <p className="text-white/70 text-sm leading-relaxed">{org.description}</p>
+                    <h5 className="font-semibold text-white text-sm lg:text-lg mb-1">{org.title}</h5>
+                    <p className="text-color text-xs lg:text-sm mb-2">{org.subtitle}</p>
+                    <p className="text-white/70 text-xs lg:text-sm leading-relaxed">{org.description}</p>
                   </div>
                 </div>
               </div>
@@ -82,23 +82,23 @@ const OrgCert: React.FC = () => {
           </div>
         </section>
         
-        <section className="glass-card rounded-3xl p-8 hover:neon-glow transition-all duration-300">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
-            <h4 className="text-xl font-bold text-gradient-primary">Certificates</h4>
+        <section className="glass-card rounded-3xl px-5 py-8 hover:neon-glow transition-all duration-300">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-2 lg:h-8 h-4 bg-gradient-accent rounded-full"></div>
+            <h4 className="text-lg lg:text-xl font-bold text-gradient-primary">Certificates</h4>
           </div>
           
           <div className="space-y-6">
             {certificates.map((cert) => (
               <div key={cert.id} className="group">
-                <div className="flex items-start gap-4 p-4 rounded-2xl bg-gradient-dark/50 hover:bg-gradient-dark/70 transition-all duration-300">
-                  <div className="w-12 h-12 bg-gradient-accent rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0">
-                    <FaAward className="text-white text-lg"/>
+                <div className="flex items-start gap-3 lg:gap-4 p-3 lg:p-4 rounded-2xl bg-gradient-dark/50 hover:bg-gradient-dark/70 transition-all duration-300">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-accent rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0">
+                    <FaAward className="text-white text-sm lg:text-lg"/>
                   </div>
                   <div className="flex-1">
-                    <h5 className="font-semibold text-white text-lg mb-1">{cert.title}</h5>
-                    <p className="text-color text-sm mb-2">{cert.subtitle}</p>
-                    <p className="text-white/70 text-sm leading-relaxed">{cert.description}</p>
+                    <h5 className="font-semibold text-white text-sm lg:text-lg mb-1">{cert.title}</h5>
+                    <p className="text-color text-xs lg:text-sm mb-2">{cert.subtitle}</p>
+                    <p className="text-white/70 text-xs lg:text-sm leading-relaxed">{cert.description}</p>
                   </div>
                 </div>
               </div>

@@ -67,9 +67,9 @@ const Navbar = () => {
 
 
   return (
-    <nav className={`fixed m-8 w-[80vw] h-[6vh] ml-0 left-1/2 -translate-x-1/2 px-5 md:px-8 py-4 rounded-full flex items-center justify-between glass-card z-100 transition-all ${animateNavbar? 'animate-slide-up' : 'opacity-0'}`}>        
-      <div className={`${playfair.className} px-4 sm:px-6`}>
-          <span className="text-gradient-primary font-bold text-xl">
+    <nav className={`fixed m-8 w-[90vw] lg:w-[80vw] h-[6vh] ml-0 left-1/2 -translate-x-1/2 px-4 md:px-8 py-4 rounded-full flex items-center justify-between glass-card z-100 transition-all ${animateNavbar? 'animate-slide-up' : 'opacity-0'}`}>        
+      <div className={`${playfair.className} px-2 sm:px-6`}>
+          <span className="text-gradient-primary font-bold text-sm lg:text-xl">
               sambatawa.tech
           </span>
       </div>       
@@ -91,9 +91,9 @@ const Navbar = () => {
             </a>
           ))}
       </div>
-      <a href="#Contact" className="glass-button px-6 py-2 rounded-full flex items-center justify-center hover:neon-glow transition-all duration-300 group">
-        <span  className="hidden 2xl:flex text-gradient-dark font-semibold text-md hover:text-white transition hover:neon-glow">Connect</span>
-        <MdConnectWithoutContact size={24} className="2xl:hidden text-gradient-accent group-hover:text-white transition-colors"/>
+      <a href="#Contact" className="glass-button px-3 py-1 rounded-full flex items-center justify-center hover:neon-glow transition-all duration-300 group">
+        <span  className="hidden 2xl:flex text-gradient-dark font-semibold text-sm hover:text-white transition hover:neon-glow">Connect</span>
+        <MdConnectWithoutContact size={20} className="2xl:hidden text-gradient-accent group-hover:text-white transition-colors"/>
       </a> 
       <div className="2xl:hidden">
         <button onClick={() => setMenuOpen(!menuOpen)} className="p-2 rounded-full text-color hover:text-white transition-all duration-300">
@@ -102,17 +102,17 @@ const Navbar = () => {
       </div>
       </div>
         {menuOpen && (
-          <div className="absolute top-20 right-0 w-[80vw] bg-[#3b5ba0da] mt-5 backdrop-blur flex flex-col items-center gap-6 py-12 px-8 rounded-3xl shadow-lg 2xl:hidden z-50 animate-slide-up duration-300">
+          <div className="absolute top-5 md:top-8 right-0 w-[90vw] bg-[#1b236d] mt-5 flex flex-col items-center gap-6 py-12 px-8 rounded-3xl shadow-lg 2xl:hidden z-50 animate-slide-up duration-300">
             {sections.map((section) => (
                 <a onClick={() => setMenuOpen(false)} key={section.id} href={`#${section.id}`}
-                className={`font-medium text-xl text-color py-3 px-8 w-full text-center rounded-full transition-all duration-300 ${active === section.id? "glass-button neon-glow text-white": "hover:glass-button"}`}>
+                className={`font-medium text-sm lg:text-xl text-color py-2 px-8 w-full text-center rounded-full transition-all duration-300 ${active === section.id? "glass-button neon-glow text-white": "hover:glass-button"}`}>
                 {section.label}
                 </a>
             ))}
             <div className="flex gap-4 mt-6">
                 {icons.map(({ link, label, icon: Icon, newTab }, index) => (
-                <a key={label} href={link} target={newTab ? "_blank" : "_self"} rel="noopener noreferrer" aria-label={label} className="glass-button p-4 rounded-full text-color hover:text-white hover:neon-glow transition-all duration-300 group bounce" style={{ animationDelay: `${index * 0.2}s` }}>
-                    <Icon size={24} className="group-hover:scale-110 transition-transform" />
+                <a key={label} href={link} target={newTab ? "_blank" : "_self"} rel="noopener noreferrer" aria-label={label} className="glass-button p-3 rounded-full text-color hover:text-white hover:neon-glow transition-all duration-300 group bounce" style={{ animationDelay: `${index * 0.2}s` }}>
+                    <Icon size={18} className="group-hover:scale-110 transition-transform" />
                 </a>
                 ))}
             </div>

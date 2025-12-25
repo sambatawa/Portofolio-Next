@@ -85,7 +85,64 @@ const projectDetails = {
     video: ""
   }
 };
+
 const ProjectContent = () => {
+  useEffect(() => {
+    const disablePrint = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+        e.preventDefault();
+        e.stopPropagation();
+        alert('Maaf tidak boleh dulu ya');
+      }
+    };
+
+    const disableCopy = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
+        e.preventDefault();
+        e.stopPropagation();
+        alert('Maaf salinan dimatikan dulu ya');
+      }
+    };
+
+    const disableSelectAll = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'a') {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+
+    const disableContextMenu = (e: MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+    };
+
+    const disableTextSelection = (e: Event) => {
+      e.preventDefault();
+    };
+
+    const originalPrint = window.print;
+    window.print = () => {
+      alert('Maaf ya');
+    };
+
+    document.addEventListener('keydown', disablePrint);
+    document.addEventListener('keydown', disableCopy);
+    document.addEventListener('keydown', disableSelectAll);
+    document.addEventListener('contextmenu', disableContextMenu);
+    document.addEventListener('selectstart', disableTextSelection);
+    document.addEventListener('dragstart', disableTextSelection);
+
+    return () => {
+      document.removeEventListener('keydown', disablePrint);
+      document.removeEventListener('keydown', disableCopy);
+      document.removeEventListener('keydown', disableSelectAll);
+      document.removeEventListener('contextmenu', disableContextMenu);
+      document.removeEventListener('selectstart', disableTextSelection);
+      document.removeEventListener('dragstart', disableTextSelection);
+      window.print = originalPrint;
+    };
+  }, []);
+
   const searchParams = useSearchParams();
   const [selectedProject, setSelectedProject] = useState<string>("loading");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -117,7 +174,7 @@ const ProjectContent = () => {
       <CustomCursor />
       <section className="relative min-h-screen flex flex-col items-center z-40 px-4 py-12 bg-slate-950 text-white">
       <div className="fixed top-8 left-8">
-        <Link href="/#project" className="inline-flex glass-card p-3 rounded-full text-cyan-400 hover:text-cyan-300 transition-colors group">
+        <Link href="/" className="inline-flex glass-card p-3 rounded-full text-cyan-400 hover:text-cyan-300 transition-colors group">
           <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
         </Link>
       </div>

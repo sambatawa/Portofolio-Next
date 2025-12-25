@@ -1,10 +1,65 @@
 'use client'
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 
 const FullCurriculumVitae: React.FC = () => {
+  useEffect(() => {
+    const disablePrint = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+        e.preventDefault();
+        e.stopPropagation();
+        alert('Maaf silahkan hubungi contact saya jika ingin CV saya ya');
+      }
+    };
+
+    const disableCopy = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
+        e.preventDefault();
+        e.stopPropagation();
+        alert('Maaf salinan dimatikan dulu ya');
+      }
+    };
+    const disableSelectAll = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'a') {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+
+    const disableContextMenu = (e: MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+    };
+
+    const disableTextSelection = (e: Event) => {
+      e.preventDefault();
+    };
+
+    const originalPrint = window.print;
+    window.print = () => {
+      alert('Maaf silahkan hubungi contact saya jika ingin CV saya ya');
+    };
+
+    document.addEventListener('keydown', disablePrint);
+    document.addEventListener('keydown', disableCopy);
+    document.addEventListener('keydown', disableSelectAll);
+    document.addEventListener('contextmenu', disableContextMenu);
+    document.addEventListener('selectstart', disableTextSelection);
+    document.addEventListener('dragstart', disableTextSelection);
+
+    return () => {
+      document.removeEventListener('keydown', disablePrint);
+      document.removeEventListener('keydown', disableCopy);
+      document.removeEventListener('keydown', disableSelectAll);
+      document.removeEventListener('contextmenu', disableContextMenu);
+      document.removeEventListener('selectstart', disableTextSelection);
+      document.removeEventListener('dragstart', disableTextSelection);
+      window.print = originalPrint;
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-white text-black p-8 md:p-16 font-serif leading-tight">
       <div className="max-w-4xl mx-auto border border-gray-100 shadow-sm px-8 md:px-12">
@@ -49,7 +104,7 @@ const FullCurriculumVitae: React.FC = () => {
               <span>IPB University</span>
               <span>Agustus 2022—Sekarang</span>
             </div>
-            <p className="text-[11px] md:text-xs">Teknologi Rekayasa Komputer, Sekolah Vokasi | GPA 3.34 dari 4.00</p>
+            <p className="text-[11px] md:text-xs">Teknologi Rekayasa Komputer, Sekolah Vokasi</p>
           </div>
           <div>
             <div className="flex justify-between font-bold text-[11px] md:text-xs">
@@ -152,7 +207,6 @@ const FullCurriculumVitae: React.FC = () => {
           </div>
         </section>
 
-        {/* SKILL (Gambar 2) */}
         <section>
           <h2 className="text-sm font-bold border-b border-black mb-2 uppercase tracking-tighter">SKILL</h2>
           <div className="text-[11px] md:text-xs space-y-1">

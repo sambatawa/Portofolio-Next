@@ -10,25 +10,38 @@ const CustomCursor = () => {
     const cursor = cursorRef.current
     const follower = followerRef.current
     if (!cursor || !follower || typeof window === 'undefined') return
-    const moveCursor = (e: MouseEvent) => {
+    
+    const moveCursor = (clientX: number, clientY: number) => {
       gsap.to(cursor, {
-        x: e.clientX - 10,
-        y: e.clientY - 10,
+        x: clientX - 10,
+        y: clientY - 10,
         duration: 0.2,
         ease: 'power2.out',
       })
       gsap.to(follower, {
-        x: e.clientX - 20,
-        y: e.clientY - 20,
+        x: clientX - 20,
+        y: clientY - 20,
         duration: 0.3,
         ease: 'power2.out',
       })
     }
-    if (window.innerWidth > 768) {
-      document.addEventListener('mousemove', moveCursor)
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      moveCursor(e.clientX, e.clientY)
     }
+    
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        const touch = e.touches[0]
+        moveCursor(touch.clientX, touch.clientY)
+      }
+    }
+    document.addEventListener('mousemove', handleMouseMove)
+    document.addEventListener('touchmove', handleTouchMove)
+    
     return () => {
-      document.removeEventListener('mousemove', moveCursor)
+      document.removeEventListener('mousemove', handleMouseMove)
+      document.removeEventListener('touchmove', handleTouchMove)
     }
   }, [])
   

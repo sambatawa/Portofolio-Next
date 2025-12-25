@@ -96,7 +96,7 @@ const LandingPage = () => {
   return (
     <>
       <section id="Page1" className="relative min-h-screen top-20 lg:top-10 flex flex-col items-center justify-center z-40 px-4 2xl:px-0">
-        <div className="w-[90vw] 2xl:w-[70vw] h-[90vh] 2xl:h-[70vh] flex flex-col 2xl:flex-row gap-10 2xl:gap-0 animate-slide-up transition-all duration-300">
+        <div className="w-[90vw] 2xl:w-[70vw] h-[800px] 2xl:h-[70vh] flex flex-col 2xl:flex-row gap-10 2xl:gap-0 animate-slide-up transition-all duration-300">
           <div className="w-[90vw] 2xl:w-[60vw] flex flex-col items-center text-center 2xl:text-start 2xl:items-start justify-center px-5 xl:px-20">
             <div className="glass-card py-2 px-3 mb-5 animate-slide-left rounded-r-full rounded-t-full">
               <h2 className="text-sm border-r-3 border-white/60 px-2 rounded-r-full text-gradient-accent font-semibold tracking-wider uppercase">
@@ -104,30 +104,29 @@ const LandingPage = () => {
               <span className="animate-pulse">|</span>
             </h2>
             </div>
-            <h1 className="text-4xl 2xl:text-5xl font-bold text-white mt-2 py-1 gradient-text animate-slide-left">
+            <h1 className="text-2xl 2xl:text-5xl font-bold text-white mt-2 py-1 gradient-text animate-slide-left">
               I&apos;m Inas Samara Taqia
             </h1>
-            <p className="text-xl text-color mt-5 max-w-2xl animate-slide-left">
+            <p className="text-sm lg:text-xl text-color mt-5 max-w-2xl animate-slide-left">
               Building the future of web applications with AI/ML integration. 
               Passionate about creating intelligent, decentralized solutions that push the boundaries of what&apos;s possible.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 mt-8 2xl:mt-20 animate-slide-left border-b-2 border-t border-white/60 py-2 px-2 rounded-3xl lg:rounded-full">
+            <div className="flex flex-row gap-3 mt-8 2xl:mt-20 animate-slide-left border-b-2 border-t border-white/60 py-2 px-2 rounded-3xl lg:rounded-full">
               <a href="#Contact" className="group relative px-8 py-4 bg-gradient-primary text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-102 neon-glow-accent">
-                <div className="relative px-15 z-10">Let&apos;s Collaborate</div>
-                <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative text-sm lg:text-xl lg:px-15 z-10">Let&apos;s Collaborate</div>
               </a>
-              <a href="/resume" className="glass-button px-5 py-4 text-white font-semibold rounded-full hover:scale-102 transition-all duration-300">
+              <a href="/resume" className="glass-button px-5 py-4 text-sm text-white font-semibold rounded-full hover:scale-102 transition-all duration-300">
                 CV
               </a>
             </div>
           </div>
-          <div className="order-first 2xl:order-none w-full 2xl:w-[40vw] h-[500px] 2xl:h-[65vh] relative overflow-hidden z-49 animate-slide-right">
+          <div className="order-first 2xl:order-none w-full 2xl:w-[40vw] h-[800px] 2xl:h-[65vh] relative overflow-hidden z-49 animate-slide-right">
             <div className="glass-card h-full p-8 flex flex-col items-center justify-center relative rounded-t-full overflow-hidden">
               <div className="absolute inset-0 bg-gradient-dark opacity-50 rounded-2xl glass-backdrop "></div>
               <Image src="/foto.jpg" className="object-cover" sizes="(min-width: 1536px) 40vw, 90vw" priority={false} alt="Profile" fill />
               <div className="relative z-10 text-center">
                 <span className={`${poppins.className} text-white text-[40px] lg:text-[50px] mx-5 font-bold text-gradient-glow `}>Sambatawa</span> 
-                <div className="mt-20 md:mt-60 lg:mt-80 mx-7 px-6 py-3 glass-card rounded-full">
+                <div className="mt-50 lg:mt-70 mx-7 px-6 py-3 glass-card rounded-full">
                   <span className="text-white text-xl lg:text-2xl font-medium">Bogor, Indonesia</span>        
                 </div>
               </div>
@@ -135,23 +134,23 @@ const LandingPage = () => {
           </div>
         </div>
       </section>   
-      <div id="Page2" className="scroll-container flex flex-col h-[80vh] 2xl:h-[80vh] w-full max-w-[80vw] mx-auto my-auto mt-40 mb-10 overflow-y-auto overflow-x-hidden bg-gradient-dark scroll-smooth rounded-4xl animate-slide-up border-2 border-[#2984a879] duration-300">
-        <section id="About" className="scroll-mt-28 p-10 px-10 lg:px-50 w-full max-w-[80vw] mx-auto flex flex-col gap-8 text-white mb-25">
-          <div className="text-center mb-10">
+      <div id="Page2" className="scroll-container flex flex-col h-[80vh] 2xl:h-[80vh] w-full max-w-[90vw] xl:max-w-[80vw] mx-auto my-auto mt-40 mb-10 overflow-y-auto overflow-x-hidden bg-gradient-dark scroll-smooth rounded-4xl animate-slide-up border-2 border-[#2984a879] duration-300">
+        <section id="About" className="scroll-mt-28 p-10 px-5 lg:px-50 w-full max-w-[80vw] mx-auto flex flex-col gap-8 text-white mb-25">
+          <div className="text-center mb-5 lg:mb-10">
             <div className="inline-block">
               <span className="text-sm font-semibold text-gradient-accent uppercase tracking-wider">About Me</span>
             </div>
-            <h2 className="text-3xl font-bold text-white mt-3 mb-4">
+            <h2 className="text-xl lg:text-3xl font-bold text-white mt-3 mb-4">
               Who is 
               <span className="text-gradient-primary"> Sambatawa?</span>
             </h2>
             <div className="glass-card rounded-b-3xl p-4 inline-block">
-              <p className="text-md text-gradient-accent font-medium">inasst@sambatawa.tech | 21 years old</p>
+              <p className="text-[12px] xl:text-md text-gradient-accent font-medium">inasst@sambatawa.tech | 21 years old</p>
             </div>
           </div>
           
           <div className="mb-5 lg:mb-10 animate-fade-in">
-            <p className="text-lg leading-relaxed text-color text-center mx-auto">
+            <p className="text-sm xl:text-lg leading-relaxed text-color text-center">
               Hi, I&apos;m Inas Samara Taqia, a passionate developer building the next generation of web applications. 
               I specialize in creating intelligent, responsive interfaces that seamlessly integrate AI/ML capabilities with modern web technologies.
               My journey spans from frontend development to backend architecture, with a deep focus on how machine learning can revolutionize user experiences and create more intuitive, personalized organization and certificate.
@@ -162,8 +161,8 @@ const LandingPage = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-4">
                 <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
-                  <h3 className="text-xl font-bold text-gradient-primary">Technical Skills</h3>
+                  <div className="w-2 lg:h-8 h-4 bg-gradient-accent rounded-full"></div>
+                  <h3 className="text-lg lg:text-xl font-bold text-gradient-primary">Technical Skills</h3>
                 </div>
                   <div className="relative h-full w-full rounded-3xl p-6 overflow-hidden">
                     <div className="relative h-full flex items-center justify-center">
@@ -215,19 +214,19 @@ const LandingPage = () => {
                 <div className="space-y-6 px-0 lg:px-20">
                   <div className="text-left">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
-                        <h3 className="text-xl font-bold text-gradient-primary">Education</h3>
+                      <div className="w-2 h-4 lg:h-8 bg-gradient-accent rounded-full"></div>
+                        <h3 className="text-lg lg:text-xl font-bold text-gradient-primary">Education</h3>
                       </div>
                     <div className="flex gap-4 group cursor-pointer">
                       <div className="text-left">
-                        <span className="font-semibold text-white text-lg block">Computer Engineering</span>
+                        <span className="font-semibold text-white text-md lg:text-lg block">Computer Engineering</span>
                         <span className="text-color">IPB University</span>
                         <span className="text-sm text-gray-400 block">Vocational School | August 2023 - Present</span>
                       </div>
                     </div>
                     <div className="flex gap-4 group cursor-pointer mt-4">
                       <div className="text-left">
-                        <span className="font-semibold text-white text-lg block">Science</span>
+                        <span className="font-semibold text-white text-md lg:text-lg block">Science</span>
                         <span className="text-color">SMAN 6 Kabupaten Tangerang</span>
                         <span className="text-sm text-gray-400 block">July 2019 - May 2022</span>
                       </div>
@@ -235,12 +234,12 @@ const LandingPage = () => {
                 </div>
                   <div className="text-left ">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-2 h-8 bg-gradient-accent rounded-full"></div>
-                      <h3 className="text-xl font-bold text-gradient-primary">Hobby and Interests</h3>
+                      <div className="w-2 lg:h-8 h-4 bg-gradient-accent rounded-full"></div>
+                      <h3 className="text-lg lg:text-xl font-bold text-gradient-primary">Hobby and Interests</h3>
                       </div>
                     <div className="flex flex-wrap gap-3 justify-center">
                       {["AI/ML", "Design", "Writing", "Reading", "Learn code", "3D Design CAD"].map((interest) => (
-                        <span key={interest} className="px-4 py-2 rounded-full bg-gradient-dark text-white/80 text-sm font-medium hover:scale-105 transition-all duration-300 cursor-pointer"> {interest} </span>))}
+                        <span key={interest} className="px-4 py-2 rounded-full bg-gradient-dark text-white/80 text-[10px] lg:text-sm font-medium hover:scale-105 transition-all duration-300 cursor-pointer"> {interest} </span>))}
                     </div>
                   </div>
                 </div>
@@ -249,10 +248,10 @@ const LandingPage = () => {
             <OrgCert />
           </div>
         </section>
-        <section id="Projects" className="scroll-mt-5 p-10 px-10 lg:px-50 py-10 w-full max-w-[80vw] mx-auto flex flex-col items-center justify-center text-white">    
+        <section id="Projects" className="scroll-mt-5 px-5 lg:px-50 py-10 w-full max-w-[80vw] mx-auto flex flex-col items-center justify-center text-white">    
           <Project />
         </section>
-        <section id="Contact" className="scroll-mt-5 p-10 px-10 lg:px-50 py-10 w-full max-w-[80vw] mx-auto flex flex-col items-center justify-center text-white">
+        <section id="Contact" className="scroll-mt-5 px-5 lg:px-50 py-10 w-full max-w-[80vw] mx-auto flex flex-col items-center justify-center text-white">
           <Contact />
         </section>
       </div>

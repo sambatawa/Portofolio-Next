@@ -1,6 +1,6 @@
 "use client"
 import { useState, ChangeEvent, FormEvent } from "react";
-import { FaGithub, FaLinkedinIn, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaInstagram, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const Contact = () => {

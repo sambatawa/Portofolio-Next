@@ -3,9 +3,9 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { Playfair_Display } from "next/font/google";
-import { FaGithub
-    , FaArrowLeft, FaChevronLeft, FaChevronRight, FaPlay } from "react-icons/fa";
+import { FaGithub, FaArrowLeft, FaChevronLeft, FaChevronRight, FaPlay } from "react-icons/fa";
 import CustomCursor from "./CustomCursor";
 
 const playfair = Playfair_Display({
@@ -89,8 +89,7 @@ const ProjectContent = () => {
   const searchParams = useSearchParams();
   const [selectedProject, setSelectedProject] = useState<string>("loading");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-
+  
   useEffect(() => {
     const projectParam = searchParams.get('project');
     if (projectParam) {
@@ -118,9 +117,9 @@ const ProjectContent = () => {
       <CustomCursor />
       <section className="relative min-h-screen flex flex-col items-center z-40 px-4 py-12 bg-slate-950 text-white">
       <div className="fixed top-8 left-8">
-        <a href="/#project" className="inline-flex glass-card p-3 rounded-full text-cyan-400 hover:text-cyan-300 transition-colors group">
+        <Link href="/#project" className="inline-flex glass-card p-3 rounded-full text-cyan-400 hover:text-cyan-300 transition-colors group">
           <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
-        </a>
+        </Link>
       </div>
 
       <div className="w-full max-w-[70vw] mt-16">
@@ -200,7 +199,7 @@ const ProjectContent = () => {
                 <h2 className={`text-2xl font-bold mb-4 text-gradient-accent tracking-wider ${playfair.className}`}>Tech Stack</h2>
                 <div className="flex flex-wrap gap-3">
                   {(project.frameworks as string[]).map((tech: string, i: number) => (
-                    <span key={i} className="px-3 py-1 bg-white/10 border border-white/10 rounded-b-4xl text-sm text-cyan-300">
+                    <span key={i} className="px-3 py-1 bg-white/10 border border-white/10 rounded-b-2xl text-sm text-cyan-300">
                       {tech}
                     </span>
                   ))}

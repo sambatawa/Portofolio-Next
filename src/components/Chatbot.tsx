@@ -78,6 +78,7 @@ const Chatbot = () => {
 
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
+      console.error('Chatbot error:', error);
       const errorMessage: Message = {
         id: messages.length + 2,
         sender: 'bot',

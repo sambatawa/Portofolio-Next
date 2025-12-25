@@ -1,5 +1,7 @@
 'use client'
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 
 const FullCurriculumVitae: React.FC = () => {
@@ -7,16 +9,16 @@ const FullCurriculumVitae: React.FC = () => {
     <div className="min-h-screen bg-white text-black p-8 md:p-16 font-serif leading-tight">
       <div className="max-w-4xl mx-auto border border-gray-100 shadow-sm px-8 md:px-12">
         <div className="mb-6">
-          <a href="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-black transition-colors">
+          <Link href="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-black transition-colors">
             <FaArrowLeft className="text-lg" />
             <span className="text-sm font-medium">Kembali</span>
-          </a>
+          </Link>
         </div>  
         <header className="mb-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
             <div className="md:col-span-1">
-              <div className="w-30 h-40 mx-auto md:mx-0 bg-gray-200 rounded-lg overflow-hidden shadow-sm">
-                <img src="/fotocv.jpg" alt="Profile Photo" className="w-full h-full object-cover" />
+              <div className="w-30 h-40 mx-auto md:mx-0 bg-gray-200 rounded-lg overflow-hidden shadow-sm relative">
+                <Image src="/fotocv.jpg" alt="Profile Photo" fill className="object-cover" />
               </div>
             </div>
             <div className="md:col-span-2 text-center md:text-left">

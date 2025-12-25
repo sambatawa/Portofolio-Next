@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { FaComments, FaTimes, FaPaperPlane } from 'react-icons/fa';
+import { FaComments, FaTimes} from 'react-icons/fa';
 import Chatbot from './Chatbot';
 
 const FloatingChatbot = () => {

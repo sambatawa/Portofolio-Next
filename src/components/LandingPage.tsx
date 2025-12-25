@@ -18,8 +18,7 @@ const LandingPage = () => {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
-  const [activeIndex, setActiveIndex] = useState(0);
-
+  
   const texts = [
     "Web Developer", 
     "Machine Learning Engineer",
@@ -117,8 +116,8 @@ const LandingPage = () => {
                 <div className="relative px-15 z-10">Let&apos;s Collaborate</div>
                 <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
-              <a href="/resume" className="glass-button px-8 py-4 text-white font-semibold rounded-full hover:scale-102 transition-all duration-300">
-                View Resume
+              <a href="/resume" className="glass-button px-5 py-4 text-white font-semibold rounded-full hover:scale-102 transition-all duration-300">
+                CV
               </a>
             </div>
           </div>

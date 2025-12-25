@@ -24,8 +24,6 @@ const FullCurriculumVitae: React.FC = () => {
               <div className="text-[10px] md:text-xs flex flex-wrap justify-center md:justify-start gap-x-3 gap-y-1 text-gray-800 mb-6">
                 <span>Bogor, Indonesia</span>
                 <span>|</span>
-                <span>082211511345</span>
-                <span>|</span>
                 <a href="mailto:inasst@sambatawa.tech" className="underline">inasst@sambatawa.tech</a>
                 <span>|</span>
                 <a href="#" className="underline">linkedin.com/in/inas-samara-taqia</a>

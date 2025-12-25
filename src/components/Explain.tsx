@@ -172,21 +172,21 @@ const ProjectContent = () => {
   return (
     <>
       <CustomCursor />
-      <section className="relative min-h-screen flex flex-col items-center z-40 px-4 py-12 bg-slate-950 text-white">
-      <div className="fixed top-8 left-8">
+      <section className="relative min-h-screen flex flex-col items-center px-4 py-12 bg-slate-950 text-white">
+      <div className="fixed top-8 left-8 z-50">
         <Link href="/" className="inline-flex glass-card p-3 rounded-full text-cyan-400 hover:text-cyan-300 transition-colors group">
           <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
         </Link>
       </div>
 
-      <div className="w-full max-w-[70vw] mt-16">
+      <div className="w-full max-w-[80vw] mt-10 z-40">
         <article className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-6 md:p-12 shadow-2xl">
-          <header className="mb-10">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2 text-gradient-accent text-[12px] lg:text-sm font-medium uppercase tracking-widest">
+          <header className="mb-8">
+            <div className="flex flex-col lg:flex-row items-center justify-between mb-4">
+              <div className="flex items-center gap-2 text-gradient-accent text-[8px] lg:text-sm font-medium uppercase tracking-widest">
                 <span>{project.category}</span>
               </div>
-              <h1 className={`text-3xl lg:text-5xl font-bold text-gradient-primary leading-tight ${playfair.className}`}>{project.title}</h1>
+              <h1 className={`text-2xl lg:text-4xl font-bold text-gradient-primary leading-tight ${playfair.className}`}>{project.title}</h1>
             </div>
           </header>
 
@@ -216,18 +216,18 @@ const ProjectContent = () => {
             )}
           </div>
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             <section>
-                <h2 className={`text-2xl font-bold mb-4 text-gradient-accent tracking-wider ${playfair.className}`}>Overview</h2>
+                <h2 className={`text-lg lg:text-2xl font-bold mb-4 text-gradient-accent tracking-wider ${playfair.className}`}>Overview</h2>
                 <div className="py-4 pt-0">
-                    <p className="text-white leading-loose text-lg">{project.explanation}</p>
+                    <p className="text-white leading-loose text-sm lg:text-lg">{project.explanation}</p>
                     <div className="relative w-full lg:w-[60%] h-50 lg:h-95 rounded-xl overflow-hidden mx-auto">
                         <Image src={project.images[0]} alt={`${project.title} overview`} fill className="object-cover" />
                     </div>
                 </div>
                 {project.images[1] && (
                 <div className="py-4">
-                    <p className="text-white leading-loose text-lg">{project.explanation1}</p>
+                    <p className="text-white leading-loose text-sm lg:text-lg">{project.explanation1}</p>
                     <div className="relative w-full lg:w-[60%] h-50 lg:h-95 rounded-xl overflow-hidden mx-auto">
                         <Image src={project.images[1]} alt={`${project.title} overview`} fill className="object-cover" />
                     </div>
@@ -235,7 +235,7 @@ const ProjectContent = () => {
                 )}
                 {project.images[2] && (
                 <div className="py-4">
-                    <p className="text-white leading-loose text-lg">{project.explanation2}</p>
+                    <p className="text-white leading-loose text-sm lg:text-lg">{project.explanation2}</p>
                     <div className="relative w-full lg:w-[60%] h-50 lg:h-95 rounded-xl overflow-hidden mx-auto">
                         <Image src={project.images[2]} alt={`${project.title} overview`} fill className="object-cover" />
                     </div>
@@ -243,7 +243,7 @@ const ProjectContent = () => {
                 )}
                 {project.images[3] && project.explanation3 && (
                 <div className="py-4">
-                    <p className="text-white leading-loose text-lg">{project.explanation3}</p>
+                    <p className="text-white leading-loose text-sm lg:text-lg">{project.explanation3}</p>
                     <div className="relative w-full lg:w-[60%] h-50 lg:h-95 rounded-xl overflow-hidden mx-auto">
                         <Image src={project.images[3]} alt={`${project.title} analytics`} fill className="object-cover" />
                     </div>
@@ -253,7 +253,7 @@ const ProjectContent = () => {
 
             <section>
               <div>
-                <h2 className={`text-2xl font-bold mb-4 text-gradient-accent tracking-wider ${playfair.className}`}>Tech Stack</h2>
+                <h2 className={`text-lg lg:text-2xl font-bold mb-4 text-gradient-accent tracking-wider ${playfair.className}`}>Tech Stack</h2>
                 <div className="flex flex-wrap gap-3">
                   {(project.frameworks as string[]).map((tech: string, i: number) => (
                     <span key={i} className="px-3 py-1 bg-white/10 border border-white/10 rounded-b-2xl text-sm text-cyan-300">

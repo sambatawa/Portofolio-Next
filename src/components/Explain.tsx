@@ -201,7 +201,7 @@ const ProjectContent = () => {
           </div>
 
           <div className="pt-2 flex gap-3 flex-wrap mb-12">
-            <a href={project.demo} target="_blank" rel="noreferrer" className="px-5 py-2 hover:scale-105 rounded-t-2xl rounded-r-2xl bg-gradient-primary transition-colors font-semibold shadow-lg shadow-cyan-500/20 flex items-center">
+            <a href={project.demo} target="_blank" rel="noreferrer" className="px-5 py-2 hover:scale-105 rounded-t-2xl rounded-r-2xl bg-gradient-primary transition-colors font-semibold shadow-lg shadow-[#4ba293]/20 flex items-center">
               Demo
             </a>
             {project.repo && (

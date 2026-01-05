@@ -179,6 +179,7 @@ const Chatbot = () => {
               type="text" 
               value={inputMessage} 
               onChange={(e) => setInputMessage(e.target.value)}
+              onKeyPress={handleKeyPress}
               placeholder="Ask me anything about my skills or projects..."
               disabled={isLoading}
               className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm text-white placeholder-white/50 rounded-full border border-[#4ba293]/30 focus:outline-none focus:border-[#4ba293] transition-all duration-300 text-sm disabled:opacity-50 pr-12"

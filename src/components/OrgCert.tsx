@@ -48,20 +48,20 @@ const OrgCert: React.FC = () => {
 
   return (
     <div className="px-0 mt-20 lg:mt-0 relative">
-      <div className="text-center">
-        <h3 className="text-xl xl:text-3xl font-bold text-white mb-5">
-          Experience <span className="text-gradient-accent">Organization and Certificate</span>
-        </h3>
-        <p className="text-sm xl:text-lg text-color max-w-2xl mb-10 mx-auto">
-          Building connections through organizations and continuous learning
+      <div className="text-center mb-10">
+        <span className="text-xl xl:text-3xl font-bold text-white">
+          Experience <span className="text-gradient-accent"> Certificate</span>
+        </span>
+        <p className="text-sm xl:text-lg text-color max-w-2xl mx-auto mt-4">
+          My activities and certifications in courses
         </p>
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <section className="glass-card rounded-3xl px-5 py-8 hover:neon-glow transition-all duration-300">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-2 lg:h-8 h-4 bg-gradient-accent rounded-full"></div>
-            <h4 className="text-lg lg:text-xl font-bold text-gradient-primary">Organizations</h4>
+          <div className="flex flex-col items-start gap-1 mb-4">
+            <h4 className="text-lg lg:text-xl font-bold text-gradient-primary">Activities</h4>
+            <div className="h-0.5 w-12 bg-gradient-accent rounded-full"></div>
           </div>
           
           <div className="space-y-6">
@@ -83,9 +83,9 @@ const OrgCert: React.FC = () => {
         </section>
         
         <section className="glass-card rounded-3xl px-5 py-8 hover:neon-glow transition-all duration-300">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-2 lg:h-8 h-4 bg-gradient-accent rounded-full"></div>
+          <div className="flex flex-col items-start gap-2 mb-4">
             <h4 className="text-lg lg:text-xl font-bold text-gradient-primary">Certificates</h4>
+            <div className="h-0.5 w-8 bg-gradient-accent rounded-full"></div>
           </div>
           
           <div className="space-y-6">

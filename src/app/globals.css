@@ -11,10 +11,10 @@ html {
 }
 @layer utilities {
   .bg-gradient-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(100deg, #4aa5f5 0%, #4ba293 100%);
   }
   .bg-gradient-accent {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background: #4aa5f5;
   }
   .bg-gradient-dark {
     background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
@@ -24,13 +24,8 @@ html {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
-  .bg-gradient-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
   .text-gradient-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(100deg, #4aa5f5 0%, #4ba27e 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -42,14 +37,14 @@ html {
     -webkit-text-fill-color: transparent;
   }
   .text-gradient-glow {
-  background: linear-gradient(135deg, #4ecdc4 0%, #669bea 50%, #45b7d1 100%);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientShift 3s ease infinite;
-  display: inline-block;
-  filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.5));
+    background: linear-gradient(135deg, #4ecdc4 0%, #669bea 50%, #45b7d1 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
+    display: inline-block;
+    filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.5));
   }
   .neon-glow-accent {
     box-shadow: 0 0 5px rgba(79, 172, 254, 0.4), 0 0 40px rgba(79, 172, 254, 0.2), 0 0 60px rgba(79, 172, 254, 0.3);
@@ -193,7 +188,7 @@ html {
   }
 }
 .gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4facfe 100%);
+  background: linear-gradient(135deg, #667eea 0%, #4ba29e 50%, #4facfe 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -212,21 +207,6 @@ html {
   background: #00ffc6 !important;
   opacity: 1;
   transform: scale(1.2);
-}
-.scroll-container {
-  scrollbar-width: thin;
-  scrollbar-color: #888 transparent;
-}
-.scroll-container::-webkit-scrollbar {
-  width: 8px;
-  background: transparent;
-}
-.scroll-container::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 8px;
-}
-.scroll-container::-webkit-scrollbar-track {
-  background: transparent;
 }
 @keyframes drawLine {
   to {
@@ -290,22 +270,6 @@ html {
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #8486dd, #6366f1);
-  border-radius: 2px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #6366f1, #8486dd);
-}
-
-/* Framework showcase animations */
 @keyframes slideInFromBottom {
   0% { transform: translateY(20px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }

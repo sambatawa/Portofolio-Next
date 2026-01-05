@@ -57,8 +57,8 @@ function rateLimit(ip: string, ms = 15_000) {
 async function verifyRecap(token: string) {
     const secret = process.env.RECAPTCHA_SECRET_KEY;
     if (!secret) {
-        console.log("secret key gada, skip verifikasi");
-        return true;
+        console.log("RECAPTCHA_SECRET_KEY tidak ditemukan di .env");
+        return false;
     }
     try {
         const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
@@ -70,7 +70,7 @@ async function verifyRecap(token: string) {
         return data.success === true;
     } catch (error) {
         console.error("Gagal verifikasi reCAPTCHA:", error);
-        return true; 
+        return false; 
     }
 }
 export async function OPTIONS() {

@@ -57,8 +57,8 @@ const Contact = () => {
   return (
     <div>
       <div className="py-10">
-        <div className="text-center mb-12 max-w-xl mx-auto">
-          <h2 className="text-xl md:text-3xl font-bold text-white mb-4">
+        <div className="text-center mb-12 mx-auto">
+          <h2 className="text-xl xl:text-3xl font-bold text-white mb-4">
             Let&apos;s Build Something
             <span className="text-gradient-primary"> Amazing Together</span>
           </h2>
@@ -67,9 +67,9 @@ const Contact = () => {
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
           <div className="space-y-5">
             <div className="rounded-tr-full p-0 lg:p-8 hover:neon-glow transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-2 h-4 lg:h-8 bg-gradient-accent rounded-full"></div>
+              <div className="flex flex-col items-start gap-1 mb-6">
                 <h3 className="text-lg lg:text-xl font-bold text-gradient-primary">Contact Information</h3>
+                <div className="h-0.5 w-30 bg-gradient-accent rounded-full"></div>
               </div>
               <p className="text-color mb-6 text-sm lg:text-md leading-relaxed">I&apos;m always excited to work on new projects. Let&apos;s discuss how we can bring your vision to life.</p>
               <div className="space-y-6 ml-4">
@@ -103,9 +103,9 @@ const Contact = () => {
               </div>
             </div>
             <div className="rounded-tr-full p-0 lg:p-8 hover:neon-glow transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-2 h-4 lg:h-8 bg-gradient-accent rounded-full"></div>
+              <div className="flex flex-col items-start gap-1 mb-6">
                 <h3 className="text-lg lg:text-xl font-bold text-gradient-primary">Follow Me</h3>
+                <div className="h-0.5 w-10 bg-gradient-accent rounded-full"></div>
               </div>
               <div className="grid grid-cols-3 gap-4">
                 <a href="https://github.com/sambatawa" className="group glass-button rounded-bl-4xl p-3 text-center transition-all duration-300 hover:scale-105 hover:neon-glow" target="_blank" rel="noopener noreferrer">
@@ -124,9 +124,10 @@ const Contact = () => {
             </div>
           </div>
           <div className="glass-card rounded-b-4xl p-4 lg:p-8 hover:neon-glow transition-all duration-300">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-2 h-4 lg:h-8 bg-gradient-primary rounded-full"></div>
+            <div className="flex items-start flex-col gap-1 mb-6">
               <h3 className="text-lg lg:text-xl font-bold text-gradient-accent">Or Send Message:</h3>
+              <div className="h-0.5 w-20 bg-gradient-accent rounded-full"></div>
+
             </div>
             <form onSubmit={Submit} className="space-y-4 lg:space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">

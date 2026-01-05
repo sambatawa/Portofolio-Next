@@ -21,9 +21,9 @@ const LandingPage = () => {
   
   const texts = [
     "Web Developer", 
-    "Machine Learning Engineer",
-    "Full Stack Developer",
-    "AI Engineer"
+    "Machine Learning Enthusiast",
+    "AI Enthusiast",
+    "Tech Explorer"
   ];
   
   const currentText = texts[charIndex % texts.length];
@@ -68,7 +68,7 @@ const LandingPage = () => {
               setTimeout(() => {
                 const targetElement = document.querySelector(href);
                 if (targetElement) {
-                  const container = document.querySelector('.scroll-container');
+                  const container = document.querySelector('.custom-scrollbar');
                   if (container) {
                     const targetRect = targetElement.getBoundingClientRect();
                     const containerRect = container.getBoundingClientRect();
@@ -99,7 +99,7 @@ const LandingPage = () => {
         <div className="w-[90vw] 2xl:w-[70vw] h-[800px] 2xl:h-[70vh] flex flex-col 2xl:flex-row gap-10 2xl:gap-0 animate-slide-up transition-all duration-300">
           <div className="w-[90vw] 2xl:w-[60vw] flex flex-col items-center text-center 2xl:text-start 2xl:items-start justify-center px-5 xl:px-20">
             <div className="glass-card py-2 px-3 mb-5 animate-slide-left rounded-r-full rounded-t-full">
-              <h2 className="text-sm border-r-3 border-white/60 px-2 rounded-r-full text-gradient-accent font-semibold tracking-wider uppercase">
+              <h2 className="text-[12px] border-r-3 border-white/60 px-2 rounded-r-full text-gradient-accent font-semibold tracking-wider uppercase">
               {displayText}
               <span className="animate-pulse">|</span>
             </h2>
@@ -134,12 +134,9 @@ const LandingPage = () => {
           </div>
         </div>
       </section>   
-      <div id="Page2" className="scroll-container flex flex-col h-[80vh] 2xl:h-[80vh] w-full max-w-[90vw] xl:max-w-[80vw] mx-auto my-auto mt-40 mb-10 overflow-y-auto overflow-x-hidden bg-gradient-dark scroll-smooth rounded-4xl animate-slide-up border-2 border-[#2984a879] duration-300">
+      <div id="Page2" className="custom-scrollbar flex flex-col h-[80vh] 2xl:h-[80vh] w-full max-w-[90vw] xl:max-w-[80vw] mx-auto my-auto mt-40 mb-10 overflow-y-auto overflow-x-hidden bg-gradient-dark scroll-smooth rounded-4xl animate-slide-up border-2 border-[#2984a879] duration-300">
         <section id="About" className="scroll-mt-28 p-10 px-5 lg:px-50 w-full max-w-[80vw] mx-auto flex flex-col gap-8 text-white mb-25">
           <div className="text-center mb-5 lg:mb-10">
-            <div className="inline-block">
-              <span className="text-sm font-semibold text-gradient-accent uppercase tracking-wider">About Me</span>
-            </div>
             <h2 className="text-xl lg:text-3xl font-bold text-white mt-3 mb-4">
               Who is 
               <span className="text-gradient-primary"> Sambatawa?</span>
@@ -160,9 +157,9 @@ const LandingPage = () => {
             <div className="h-fit pb-20 mb-6 glass-card rounded-3xl p-8 space-y-6 hover:neon-glow transition-all duration-300">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-4">
                 <div className="space-y-6">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-2 lg:h-8 h-4 bg-gradient-accent rounded-full"></div>
+                <div className="flex flex-col items-start gap-1 mb-6">
                   <h3 className="text-lg lg:text-xl font-bold text-gradient-primary">Technical Skills</h3>
+                  <div className="h-0.5 w-20 bg-gradient-accent rounded-full"></div>
                 </div>
                   <div className="relative h-full w-full rounded-3xl p-6 overflow-hidden">
                     <div className="relative h-full flex items-center justify-center">
@@ -213,10 +210,10 @@ const LandingPage = () => {
                 </div>
                 <div className="space-y-6 px-0 lg:px-20">
                   <div className="text-left">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-2 h-4 lg:h-8 bg-gradient-accent rounded-full"></div>
-                        <h3 className="text-lg lg:text-xl font-bold text-gradient-primary">Education</h3>
-                      </div>
+                    <div className="flex items-start flex-col gap-1 mb-6">
+                      <h3 className="text-lg lg:text-xl font-bold text-gradient-primary">Education</h3>
+                      <div className="h-0.5 w-10 bg-gradient-accent rounded-full"></div>
+                    </div>
                     <div className="flex gap-4 group cursor-pointer">
                       <div className="text-left">
                         <span className="font-semibold text-white text-md lg:text-lg block">Computer Engineering</span>
@@ -233,10 +230,11 @@ const LandingPage = () => {
                     </div>
                 </div>
                   <div className="text-left ">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-2 lg:h-8 h-4 bg-gradient-accent rounded-full"></div>
+                    <div className="flex items-start flex-col gap-1 mb-6">
                       <h3 className="text-lg lg:text-xl font-bold text-gradient-primary">Hobby and Interests</h3>
-                      </div>
+                      <div className="h-0.5 w-30 bg-gradient-accent rounded-full"></div>
+
+                    </div>
                     <div className="flex flex-wrap gap-3 justify-center">
                       {["AI/ML", "Design", "Writing", "Reading", "Learn code", "3D Design CAD"].map((interest) => (
                         <span key={interest} className="px-4 py-2 rounded-full bg-gradient-dark text-white/80 text-[10px] lg:text-sm font-medium hover:scale-105 transition-all duration-300 cursor-pointer"> {interest} </span>))}
